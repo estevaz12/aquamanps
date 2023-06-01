@@ -5,7 +5,7 @@ import styles from './Navbar.module.css';
 
 export default function Navbar() {
   return (
-    <div className={styles.navbar}>
+    <div className={styles.fixedTop}>
       <nav className='container-fluid'>
         <ul>
           <li key='logo'>
@@ -29,7 +29,7 @@ export default function Navbar() {
         </ul>
       </nav>
 
-      <aside className='container'>
+      <aside className='container center-text'>
         <nav>
           <div>
             <a href='#'>ESPAÑOL</a>

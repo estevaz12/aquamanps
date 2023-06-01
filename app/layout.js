@@ -15,10 +15,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang='en' data-theme='light'>
       <body className={inter.className}>
-        <Navbar />
         <Hero />
+        <Navbar />
 
-        <main className='container'>{children}</main>
+        <main className='container center-text'>{children}</main>
       </body>
     </html>
   );

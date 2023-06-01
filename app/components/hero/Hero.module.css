@@ -1,15 +1,25 @@
-/* .hero {
+.hero {
   background-color: #394046;
-  background-position: center;
-  background-size: cover;
-  height: 400px;
+  height: 500px;
+  position: absolute;
+  top: 0;
+  z-index: -1;
 }
 
 .heroImage {
-  z-index: 0;
   object-position: center;
-  object-fit: conver;
-} */
+  object-fit: cover;
+  z-index: -2;
+}
+
+.heroText {
+  z-index: inherit;
+  margin-top: 50%;
+}
+
+.heroMargin {
+  margin-bottom: 500px;
+}
 
 /* header {
   padding: var(--spacing-company) 0;
