@@ -10,6 +10,7 @@ export default function Hero() {
           alt='Pool'
           fill={true}
           className={styles.heroImage}
+          priority={true}
         />
         <header className={'container center-text ' + styles.heroText}>
           <hgroup>
