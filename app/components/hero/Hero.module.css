@@ -1,6 +1,7 @@
 .hero {
   background-color: #394046;
   height: 500px;
+  width: auto;
   position: absolute;
   top: 0;
   z-index: -1;
