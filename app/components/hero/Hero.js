@@ -4,7 +4,7 @@ import styles from './Hero.module.css';
 export default function Hero() {
   return (
     <>
-      <div className={styles.hero}>
+      <div className={styles.hero + ' move-back'}>
         <Image
           src='/images/pool1.jpg'
           alt='Pool'

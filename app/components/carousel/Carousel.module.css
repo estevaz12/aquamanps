@@ -1,0 +1,7 @@
+.carousel {
+  white-space: nowrap;
+}
+
+.carousel > * {
+  margin-right: 50px;
+}

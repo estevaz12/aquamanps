@@ -29,3 +29,16 @@ body {
 .center-text {
   text-align: center;
 }
+
+.move-back {
+  z-index: -1;
+}
+
+.sticky {
+  position: sticky;
+  top: 25%;
+}
+
+.main-bg-color {
+  background-color: var(--background-color);
+}
