@@ -6,6 +6,7 @@ export default function BigNum({ num, caption }) {
       <article className={styles.bigNumContainer}>
         <h1 className={styles.bigNum}>{num}+</h1>
       </article>
+      <br />
       <h5>{caption}</h5>
     </div>
   );

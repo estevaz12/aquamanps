@@ -26,6 +26,44 @@ body {
     rgb(var(--background-start-rgb));
 } */
 
+/* Light-blue Light scheme (Default) */
+/* Can be forced with data-theme="light" */
+[data-theme='light'],
+:root:not([data-theme='dark']) {
+  --primary: #039be5;
+  --primary-hover: #0288d1;
+  --primary-focus: rgba(3, 155, 229, 0.125);
+  --primary-inverse: #fff;
+}
+
+/* Light-blue Dark scheme (Auto) */
+/* Automatically enabled if user has Dark mode enabled */
+@media only screen and (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --primary: #039be5;
+    --primary-hover: #03a9f4;
+    --primary-focus: rgba(3, 155, 229, 0.25);
+    --primary-inverse: #fff;
+  }
+}
+
+/* Light-blue Dark scheme (Forced) */
+/* Enabled if forced with data-theme="dark" */
+[data-theme='dark'] {
+  --primary: #039be5;
+  --primary-hover: #03a9f4;
+  --primary-focus: rgba(3, 155, 229, 0.25);
+  --primary-inverse: #fff;
+}
+
+/* Light-blue (Common styles) */
+:root {
+  --form-element-active-border-color: var(--primary);
+  --form-element-focus-color: var(--primary-focus);
+  --switch-color: var(--primary-inverse);
+  --switch-checked-background-color: var(--primary);
+}
+
 .center-text {
   text-align: center;
 }
@@ -41,4 +79,9 @@ body {
 
 .main-bg-color {
   background-color: var(--background-color);
+}
+
+#map {
+  height: 400px;
+  width: 100%;
 }

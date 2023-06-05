@@ -2,56 +2,69 @@ import Image from 'next/image';
 import BeforeAfterFig from './components/figure/Figure';
 import Carousel from './components/carousel/Carousel';
 import BigNum from './components/bigNum/BigNum';
+import Script from 'next/script';
+
+export const metadata = {};
 
 export default function Home() {
   return (
-    <main className='center-text'>
-      <div className='container main-bg-color'>
-        <div id='description'>
+    <>
+      <main className='center-text'>
+        <div className='container main-bg-color'>
+          <div id='description'>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+              eget nulla ligula. Pellentesque at libero volutpat, accumsan
+              tellus eu, hendrerit urna.
+            </p>
+          </div>
+
+          <section id='services'>
+            <h1>SERVICES</h1>
+            {services.map((service) => (
+              <article key={service.id}>
+                <Image
+                  src={service.img}
+                  alt={service.name}
+                  width={200}
+                  height={200}
+                  loading='lazy'
+                />
+                <footer>
+                  <strong>{service.name}</strong>
+                </footer>
+              </article>
+            ))}
+          </section>
+        </div>
+
+        <section id='before-after' className='move-back sticky'>
+          <BeforeAfterFig />
+        </section>
+
+        <section id='experience' className='container main-bg-color'>
+          <h1>
+            EXPERIENCE YOU CAN <u>TRUST</u>
+          </h1>
+          <Carousel elements={carouselImgs} />
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget
             nulla ligula. Pellentesque at libero volutpat, accumsan tellus eu,
             hendrerit urna.
           </p>
-        </div>
+          <BigNum num={20} caption='Years of experience' />
+          <BigNum num={250} caption='Satisfied customers over the years' />
 
-        <section id='services'>
-          <h1>SERVICES</h1>
-          {services.map((service) => (
-            <article key={service.id}>
-              <Image
-                src={service.img}
-                alt={service.name}
-                width={200}
-                height={200}
-                loading='lazy'
-              />
-              <footer>
-                <strong>{service.name}</strong>
-              </footer>
-            </article>
-          ))}
+          <div id='map'></div>
         </section>
-      </div>
+      </main>
 
-      <section id='before-after' className='move-back sticky'>
-        <BeforeAfterFig />
-      </section>
-
-      <section id='experience' className='container main-bg-color'>
-        <h1>
-          EXPERIENCE YOU CAN <u>TRUST</u>
-        </h1>
-        <Carousel elements={carouselImgs} />
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget
-          nulla ligula. Pellentesque at libero volutpat, accumsan tellus eu,
-          hendrerit urna.
-        </p>
-        <BigNum num={20} caption='Years of experience' />
-        <BigNum num={250} caption='Satisfied customers over the years' />
-      </section>
-    </main>
+      <Script src='https://polyfill.io/v3/polyfill.min.js?features=default' />
+      <Script
+        src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDkWJAgWZsii-WMLU9OxUad0PFBl2zzVuo&callback=initMap'
+        strategy='lazyOnload'
+      />
+    </>
   );
 }
 

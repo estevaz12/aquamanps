@@ -1,8 +1,19 @@
 .bigNumContainer {
   border-radius: 100%;
   margin-bottom: 1rem;
+  width: 12.5rem;
+  height: 12.5rem;
+  margin: auto;
+  padding: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary);
 }
 
 .bigNum {
   margin: 0;
+  font-size: 4rem;
+  color: var(--primary-inverse);
+  text-shadow: var(--card-box-shadow);
 }
