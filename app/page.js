@@ -3,6 +3,7 @@ import BeforeAfterFig from './components/figure/Figure';
 import Carousel from './components/carousel/Carousel';
 import BigNum from './components/bigNum/BigNum';
 import Script from 'next/script';
+import Map from './components/map/Map';
 
 export const metadata = {};
 
@@ -55,15 +56,9 @@ export default function Home() {
           <BigNum num={20} caption='Years of experience' />
           <BigNum num={250} caption='Satisfied customers over the years' />
 
-          <div id='map'></div>
+          <Map />
         </section>
       </main>
-
-      <Script src='https://polyfill.io/v3/polyfill.min.js?features=default' />
-      <Script
-        src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDkWJAgWZsii-WMLU9OxUad0PFBl2zzVuo&callback=initMap'
-        strategy='lazyOnload'
-      />
     </>
   );
 }
