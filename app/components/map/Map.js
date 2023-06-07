@@ -24,6 +24,7 @@ export default function Map() {
 }
 
 // TODO: make so that it displays the markers once in viewport
+// TODO: change marker styling
 function CustomMap() {
   return (
     <GoogleMap mapContainerClassName='map-container' options={options}>
