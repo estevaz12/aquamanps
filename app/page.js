@@ -43,18 +43,22 @@ export default function Home() {
           <BeforeAfterFig />
         </section>
 
-        <section id='experience' className='container main-bg-color'>
-          <h1>
-            EXPERIENCE YOU CAN <u>TRUST</u>
-          </h1>
-          <Carousel elements={carouselImgs} />
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget
-            nulla ligula. Pellentesque at libero volutpat, accumsan tellus eu,
-            hendrerit urna.
-          </p>
-          <BigNum num={20} caption='Years of experience' />
-          <BigNum num={250} caption='Satisfied customers over the years' />
+        <section id='experience' className='main-bg-color'>
+          <div className='conatainer'>
+            <h1>
+              EXPERIENCE YOU CAN <u>TRUST</u>
+            </h1>
+            <Carousel elements={carouselImgs} />
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+              eget nulla ligula. Pellentesque at libero volutpat, accumsan
+              tellus eu, hendrerit urna.
+            </p>
+            <BigNum num={20} caption='Years of experience' />
+            <BigNum num={250} caption='Satisfied customers over the years' />
+          </div>
+
+          <br />
 
           <Map />
         </section>
