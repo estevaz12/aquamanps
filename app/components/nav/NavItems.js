@@ -11,3 +11,5 @@ export default function NavItems() {
     </ul>
   );
 }
+
+// TODO: change <a> tags to Link components

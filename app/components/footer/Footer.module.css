@@ -1,0 +1,34 @@
+.footer {
+  background-color: var(--contrast);
+  color: var(--contrast-inverse);
+}
+
+.footer ul {
+  padding: 0;
+}
+
+.footer li {
+  list-style: none;
+  margin-bottom: 1rem;
+}
+
+.footer a {
+  color: var(--contrast-inverse);
+}
+
+.footer h1 {
+  color: var(--primary);
+  text-decoration: underline yellow 3px;
+  margin: 0;
+}
+
+.copyright {
+  background-color: #000;
+  color: var(--muted-color);
+  padding: 0;
+}
+
+.copyright a {
+  color: var(--muted-color);
+  text-decoration: underline;
+}

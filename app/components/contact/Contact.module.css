@@ -1,0 +1,28 @@
+.contact {
+  background-color: var(--primary-hover);
+  color: var(--primary-inverse);
+}
+
+.contact * {
+  color: var(--primary-inverse);
+}
+
+.contact a {
+  text-decoration: underline;
+}
+
+.contactAddrs {
+  text-align: left;
+  width: auto;
+  margin: auto;
+  display: inline-block;
+}
+
+.contactAddrs li {
+  list-style: none inside;
+}
+
+.contact button {
+  width: auto;
+  margin: auto;
+}

@@ -66,7 +66,7 @@ export default function Home() {
           <div className='container'>
             <h5>Serving customers all over the island</h5>
             <Link href='#' role='button'>
-              Learn more
+              Learn More
             </Link>
           </div>
         </section>
