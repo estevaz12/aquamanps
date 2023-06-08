@@ -24,16 +24,16 @@ export default function Map() {
 }
 
 // TODO: make so that it displays the markers once in viewport
-// TODO: change marker styling
 function CustomMap() {
   return (
     <GoogleMap mapContainerClassName='map-container' options={options}>
       {locations.map((marker, i) => (
-        <Delayed key={i} delay={i * 150}>
+        <Delayed key={i} delay={i * 100}>
           <MarkerF
             position={marker.position}
             animation={google.maps.Animation.DROP}
             clickable={false}
+            icon='https://earth.google.com/earth/rpc/cc/icon?color=039be5&amp;id=2074&amp;scale=1'
           />
         </Delayed>
       ))}

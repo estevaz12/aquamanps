@@ -4,6 +4,7 @@ import Carousel from './components/carousel/Carousel';
 import BigNum from './components/bigNum/BigNum';
 import Script from 'next/script';
 import Map from './components/map/Map';
+import Link from 'next/link';
 
 export const metadata = {};
 
@@ -61,6 +62,13 @@ export default function Home() {
           <br />
 
           <Map />
+          <br />
+          <div className='container'>
+            <h5>Serving customers all over the island</h5>
+            <Link href='#' role='button'>
+              Learn more
+            </Link>
+          </div>
         </section>
       </main>
     </>
