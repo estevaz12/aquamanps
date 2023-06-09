@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import styles from './Hero.module.css';
+import Logo from '../logo/Logo';
 
 export default function Hero() {
   return (
@@ -14,8 +15,8 @@ export default function Hero() {
         />
         <header className={'container center-text ' + styles.heroText}>
           <hgroup>
-            <h1>Aquaman Pool Services</h1>
-            <h2>Slogan</h2>
+            <Logo />
+            <h2>Experience you can trust</h2>
           </hgroup>
         </header>
       </div>

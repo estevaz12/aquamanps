@@ -1,12 +1,13 @@
+import Logo from '../logo/Logo';
 import NavItems from '../nav/NavItems';
 import styles from './Footer.module.css';
 
 export default function Footer() {
   return (
     <>
-      <footer className={'container center-text ' + styles.footer}>
+      <footer id='footer' className={'container center-text ' + styles.footer}>
         <NavItems />
-        <h1>Aquaman</h1>
+        <Logo />
       </footer>
 
       <footer className={'container-fluid center-text ' + styles.copyright}>

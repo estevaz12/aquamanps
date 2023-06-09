@@ -38,6 +38,7 @@
 
 .contactForm header {
   background-color: var(--contrast);
+  color: var(--contrast-inverse);
   margin-bottom: calc(var(--block-spacing-vertical) / 2);
 }
 

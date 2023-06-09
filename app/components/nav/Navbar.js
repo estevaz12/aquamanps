@@ -2,14 +2,16 @@ import Image from 'next/image';
 import Language from './Language';
 import NavItems from './NavItems';
 import styles from './Navbar.module.css';
+import Logo from '../logo/Logo';
+import Menu from '../../../public/icons/list.svg';
 
 export default function Navbar() {
   return (
-    <div className={styles.fixedTop}>
+    <div className={styles.navbar}>
       <nav className='container-fluid'>
         <ul>
           <li key='logo'>
-            <strong>Aquaman</strong>
+            <Logo />
           </li>
         </ul>
         <ul>
@@ -18,12 +20,7 @@ export default function Navbar() {
           </li>
           <li key='menu'>
             <a href='#'>
-              <Image
-                src='/icons/list.svg'
-                width={16}
-                height={16}
-                alt='Nav menu'
-              />
+              <Menu />
             </a>
           </li>
         </ul>
@@ -31,9 +28,9 @@ export default function Navbar() {
 
       <aside className='container center-text'>
         <nav>
-          <div>
+          <p>
             <a href='#'>ESPAÑOL</a>
-          </div>
+          </p>
           <NavItems />
         </nav>
       </aside>

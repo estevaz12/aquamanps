@@ -16,12 +16,6 @@
   color: var(--contrast-inverse);
 }
 
-.footer h1 {
-  color: var(--primary);
-  text-decoration: underline yellow 3px;
-  margin: 0;
-}
-
 .copyright {
   background-color: #121b21;
   color: var(--muted-color);

@@ -1,15 +1,11 @@
-import Image from "next/image";
+import Image from 'next/image';
+import Globe from '../../../public/icons/globe2.svg';
 
 export default function Language() {
   return (
     <details role='list'>
       <summary aria-haspopup='listbox' role='link'>
-        <Image
-          src='/icons/globe2.svg'
-          width={16}
-          height={16}
-          alt='Change language'
-        />
+        <Globe />
       </summary>
       <ul role='listbox'>
         <li>

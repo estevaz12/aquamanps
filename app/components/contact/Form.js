@@ -2,16 +2,16 @@ import styles from './Contact.module.css';
 
 export default function Form() {
   return (
-    <dialog className={styles.contactForm} closed>
+    <dialog className={styles.contactForm} closed='true'>
       <article>
         <header>
-          <a href='#close' aria-label='Close' class='close'></a>
+          <a href='#close' aria-label='Close' className='close'></a>
           Sen us a message
         </header>
 
         <form>
           <div className='grid'>
-            <label for='firstname'>
+            <label htmlFor='firstname'>
               First name
               <input
                 type='text'
@@ -22,7 +22,7 @@ export default function Form() {
               />
             </label>
 
-            <label for='lastname'>
+            <label htmlFor='lastname'>
               Last name
               <input
                 type='text'
@@ -34,7 +34,7 @@ export default function Form() {
             </label>
           </div>
 
-          <label for='email'>
+          <label htmlFor='email'>
             Email
             <input
               type='email'
@@ -45,7 +45,7 @@ export default function Form() {
             />
           </label>
 
-          <label for='message'>
+          <label htmlFor='message'>
             Message
             <textarea
               id='message'

@@ -1,6 +1,31 @@
-.fixedTop {
+.navbar {
   position: fixed;
   top: 0;
   width: 100%;
   height: auto;
+  color: #fff;
 }
+
+.navbar h1 {
+  font-size: 1rem;
+  text-decoration-thickness: 2px;
+}
+
+.navbar > nav a,
+.navbar summary {
+  color: var(--primary-inverse);
+}
+
+.navbar summary svg {
+  margin-top: 4px;
+}
+
+.navbar details[role='list'] summary::after {
+  display: none;
+}
+
+.navbar details[role='list'] summary + ul {
+  left: auto;
+}
+
+/* TODO: style navlinks */

@@ -19,14 +19,18 @@ export default function Map() {
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
   });
 
-  if (!isLoaded) return <div aria-busy='true' className='map-container'></div>;
+  if (!isLoaded)
+    return <div aria-busy='true' className='full-width map-container'></div>;
   return <CustomMap />;
 }
 
 // TODO: make so that it displays the markers once in viewport
 function CustomMap() {
   return (
-    <GoogleMap mapContainerClassName='map-container' options={options}>
+    <GoogleMap
+      mapContainerClassName='full-width map-container'
+      options={options}
+    >
       {locations.map((marker, i) => (
         <Delayed key={i} delay={i * 100}>
           <MarkerF

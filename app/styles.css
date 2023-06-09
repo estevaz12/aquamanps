@@ -1,0 +1,25 @@
+.map-container {
+  height: 15.625rem;
+}
+
+#services article {
+  margin-top: 0;
+}
+
+#services article footer {
+  background-color: var(--contrast);
+  color: var(--contrast-inverse);
+}
+
+#before-after {
+  position: sticky;
+  top: 25%;
+  z-index: -1;
+}
+
+#experience {
+  margin-top: var(--block-spacing-vertical);
+  margin-bottom: 0;
+}
+
+/* TODO: put the map and caption in hgroup like bigNum */
