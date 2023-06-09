@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import styles from './Contact.module.css';
+import Form from './Form';
 
 export default function Contact() {
   return (
@@ -60,6 +61,7 @@ export default function Contact() {
       </div>
       <br />
       <button className='contrast'>Contact Form</button>
+      <Form />
     </footer>
   );
 }

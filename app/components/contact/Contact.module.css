@@ -26,3 +26,41 @@
   width: auto;
   margin: auto;
 }
+
+.contactForm article {
+  text-align: left;
+  overflow-y: hidden;
+}
+
+.contactForm form {
+  margin-bottom: 0;
+}
+
+.contactForm header {
+  background-color: var(--contrast);
+  margin-bottom: calc(var(--block-spacing-vertical) / 2);
+}
+
+.contactForm label,
+.contactForm input,
+.contactForm textarea {
+  color: var(--contrast);
+}
+
+.contactForm button {
+  width: 100%;
+}
+
+.contact button {
+  background-color: var(--contrast);
+  border-color: var(--contrast);
+  color: var(--contrast-inverse);
+}
+
+.contact button:hover {
+  background-color: var(--contrast-hover);
+}
+
+.contact button:focus {
+  background-color: var(--contrast-focus);
+}
