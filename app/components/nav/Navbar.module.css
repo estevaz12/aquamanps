@@ -1,14 +1,24 @@
 .navbar {
-  position: fixed;
-  top: 0;
+  z-index: 999;
   width: 100%;
   height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   color: #fff;
+  background-color: hsla(205, 30%, 15%, 0.8);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 1px 0 hsla(205, 30%, 15%, 0.2);
 }
 
 .navbar h1 {
   font-size: 1rem;
   text-decoration-thickness: 2px;
+}
+
+.navbar > nav a {
+  background-color: transparent;
 }
 
 .navbar > nav a,
@@ -28,4 +38,38 @@
   left: auto;
 }
 
-/* TODO: style navlinks */
+.navbar details [role='link']:focus {
+  background-color: transparent;
+}
+
+.navbar aside {
+  height: 100vh;
+  width: 100%;
+  animation: 1s ease forwards fadeInOut;
+}
+
+.navbar aside nav {
+  margin-top: var(--block-spacing-vertical);
+}
+
+.navbar aside a {
+  color: var(--primary-inverse);
+  font-size: 1.25rem;
+}
+
+.toggled {
+  background-color: hsla(201, 98%, 25%, 0.65);
+  backdrop-filter: blur(7.5px);
+  transition: background-color 1s ease;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* TODO: fadeOut */

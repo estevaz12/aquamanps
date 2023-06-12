@@ -5,6 +5,7 @@ import Navbar from './components/nav/Navbar';
 import Hero from './components/hero/Hero';
 import Contact from './components/contact/Contact';
 import Footer from './components/footer/Footer';
+import Overlay from './components/overlay/Overlay';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
 
         {children}
 
+        <Overlay />
         <Contact />
         <Footer />
       </body>

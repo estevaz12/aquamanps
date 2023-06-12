@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import BeforeAfterFig from './components/figure/Figure';
-import Carousel from './components/carousel/Carousel';
+import LoopSlider from './components/loopSlider/LoopSlider';
 import BigNum from './components/bigNum/BigNum';
 import Map from './components/map/Map';
 import Link from 'next/link';
@@ -33,15 +33,46 @@ export default function Home() {
         </section>
 
         <section id='before-after'>
-          <BeforeAfterFig />
+          <BeforeAfterFig className='full-width' />
         </section>
 
-        <section id='experience' className='main-bg-color'>
+        <section id='experience'>
           <h1>
             EXPERIENCE YOU CAN <mark>TRUST</mark>
           </h1>
 
-          <Carousel className='full-width' elements={carouselImgs} />
+          <LoopSlider>
+            {carouselImgs.map((img) => {
+              <Image
+                src={img.src}
+                alt={img.name}
+                width={img.width}
+                height={img.height}
+                loading='lazy'
+              />;
+            })}
+            {/* <Image
+              src={carouselImgs[0].src}
+              alt={carouselImgs[0].name}
+              width={carouselImgs[0].width}
+              height={carouselImgs[0].height}
+              loading='lazy'
+            />
+            <Image
+              src={carouselImgs[1].src}
+              alt={carouselImgs[1].name}
+              width={carouselImgs[1].width}
+              height={carouselImgs[1].height}
+              loading='lazy'
+            />
+            <Image
+              src={carouselImgs[2].src}
+              alt={carouselImgs[2].name}
+              width={carouselImgs[2].width}
+              height={carouselImgs[2].height}
+              loading='lazy'
+            /> */}
+          </LoopSlider>
 
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget
@@ -51,10 +82,7 @@ export default function Home() {
           <BigNum num={20} caption='Years of experience' />
           <BigNum num={250} caption='Satisfied customers over the years' />
 
-          <br />
-
           <Map />
-          <br />
           <h5>Serving customers all over the island</h5>
           <Link href='#' role='button'>
             Learn More
@@ -105,30 +133,27 @@ const services = [
 ];
 
 const carouselImgs = [
-  <Image
-    key={0}
-    src='/logos/hayward/hayward5.jpg'
-    alt='Hayward Logo'
-    width={200}
-    height={32}
-    loading='lazy'
-  />,
-  <Image
-    key={1}
-    src='/logos/cpo/cpo2.png'
-    alt='CPO Logo'
-    width={100}
-    height={100}
-    loading='lazy'
-  />,
-  <Image
-    key={2}
-    src='/logos/pentair/pentair1.png'
-    alt='Pentair Logo'
-    width={200}
-    height={75}
-    loading='lazy'
-  />,
+  {
+    id: 0,
+    src: '/logos/hayward/hayward5.jpg',
+    name: 'Hayward Logo',
+    width: 200,
+    height: 32,
+  },
+  {
+    id: 1,
+    src: '/logos/cpo/cpo2.png',
+    name: 'CPO Logo',
+    width: 100,
+    height: 100,
+  },
+  {
+    id: 2,
+    src: '/logos/pentair/pentair1.png',
+    name: 'Pentair Logo',
+    width: 200,
+    height: 75,
+  },
 ];
 
 // TODO: change wherever I use styles.class to be interpolated with `${styles.class}`

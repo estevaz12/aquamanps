@@ -11,14 +11,7 @@
   color: var(--contrast-inverse);
 }
 
-#before-after {
-  position: sticky;
-  top: 25%;
-  z-index: -1;
-}
-
 #experience {
-  margin-top: var(--block-spacing-vertical);
   margin-bottom: 0;
 }
 

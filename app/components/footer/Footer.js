@@ -1,12 +1,19 @@
 import Logo from '../logo/Logo';
-import NavItems from '../nav/NavItems';
 import styles from './Footer.module.css';
+import Link from 'next/link';
 
 export default function Footer() {
   return (
     <>
       <footer id='footer' className={'container center-text ' + styles.footer}>
-        <NavItems />
+        <ul>
+          {items.map((item) => (
+            <li key={item}>
+              <Link href={`#${item.toLowerCase()}`}>{item}</Link>
+            </li>
+          ))}
+        </ul>
+
         <Logo />
       </footer>
 
@@ -19,3 +26,5 @@ export default function Footer() {
     </>
   );
 }
+
+const items = ['CONTACT', 'SERVICES', 'EXPERIENCE', 'ABOUT'];

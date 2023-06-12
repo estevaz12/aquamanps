@@ -7,8 +7,8 @@ import WABtn from '../../../public/wa-btn/WhatsAppButtonGreenLarge.svg';
 
 export default function Contact() {
   return (
-    <footer id='contact' className={'container center-text ' + styles.contact}>
-      <h1>Contact Us</h1>
+    <footer className={'container center-text ' + styles.contact}>
+      <h1 id='contact'>Contact Us</h1>
       <a
         aria-label='Chat on WhatsApp'
         href='https://wa.me/1XXXXXXXXXX?text=Hello%21%20I%20am%20looking%20for%20Aquaman%27s%20pool%20services.'

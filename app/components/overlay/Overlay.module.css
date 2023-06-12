@@ -1,0 +1,15 @@
+.overlay {
+  position: fixed;
+  right: calc(var(--spacing) / 2 + var(--scrollbar-width, 0px));
+  bottom: var(--spacing);
+  width: auto;
+  margin-bottom: 0;
+}
+
+.overlay button {
+  padding: 0.75rem;
+  border-radius: 3rem;
+  box-shadow: var(--card-box-shadow);
+  /* line-height: 1; */
+  /* text-align: right; */
+}

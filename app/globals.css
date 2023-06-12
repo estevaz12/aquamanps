@@ -62,20 +62,44 @@ body {
   --form-element-focus-color: var(--primary-focus);
   --switch-color: var(--primary-inverse);
   --switch-checked-background-color: var(--primary);
+  --whatsapp: #25d366;
 }
 
 /*TODO: change px to rem; check if this applies to everything or just text */
+
+html {
+  scroll-behavior: smooth !important;
+}
+
+section > h1,
+footer > h1#contact {
+  padding-top: calc(var(--font-size) * 2);
+  margin-top: calc(var(--font-size) * -2);
+}
 
 h1 > mark {
   background-color: var(--h1-color);
   color: var(--primary-inverse);
 }
 
+[aria-busy='true']:not(input, select, textarea, html):empty {
+  padding: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+[aria-busy='true']:not(input, select, textarea, html):empty::before {
+  width: 2rem;
+  height: 2rem;
+}
+
 .center-text {
   text-align: center;
 }
 
-.main-bg-color {
+.backdrop {
+  width: 100%;
   background-color: var(--background-color);
 }
 
@@ -87,4 +111,9 @@ h1 > mark {
   position: relative;
   right: 50%;
   width: 100vw;
+}
+
+.whatsapp {
+  background-color: var(--whatsapp);
+  border-color: var(--whatsapp);
 }

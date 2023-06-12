@@ -5,7 +5,7 @@ import Logo from '../logo/Logo';
 export default function Hero() {
   return (
     <>
-      <div className={styles.hero + ' move-back'}>
+      <div id='#top' className={styles.hero}>
         <Image
           src='/images/pool1.jpg'
           alt='Pool'

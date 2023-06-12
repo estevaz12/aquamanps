@@ -1,9 +1,9 @@
 import styles from './Carousel.module.css';
 
-export default function Carousel({ elements, className = '' }) {
+export default function Carousel({ children }) {
   return (
-    <figure className={`${className} ${styles.carousel}`}>
-      {elements.map((element) => element)}
-    </figure>
+    <div className={styles.carousel}>
+      {children}
+    </div>
   );
 }

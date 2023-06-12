@@ -1,0 +1,24 @@
+.slider {
+  overflow: hidden;
+  white-space: nowrap;
+  width: fit-content;
+  height: fit-content;
+  animation: 10s linear infinite normal loop;
+}
+
+.slider > * {
+  margin-right: 4rem;
+}
+
+.slider > img {
+  max-width: none;
+}
+
+@keyframes loop {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

@@ -1,9 +1,9 @@
 import styles from './Figure.module.css';
 import Image from 'next/image';
 
-export default function BeforeAfterFig() {
+export default function BeforeAfterFig({ className }) {
   return (
-    <figure>
+    <figure className={className}>
       <Image
         src='/images/pool2.jpg'
         alt='Pool'
