@@ -1,8 +1,8 @@
 .slider {
-  overflow: hidden;
   white-space: nowrap;
   width: fit-content;
   height: fit-content;
+  overflow: hidden;
   animation: 10s linear infinite normal loop;
 }
 

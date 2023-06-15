@@ -41,7 +41,20 @@ export default function Home() {
             EXPERIENCE YOU CAN <mark>TRUST</mark>
           </h1>
 
-          <LoopSlider imgData={carouselImgs} />
+          <LoopSlider>
+            {carouselImgs.map((img, i) => {
+              return (
+                <Image
+                  key={i}
+                  src={img.src}
+                  alt={img.name}
+                  width={img.width}
+                  height={img.height}
+                  loading='lazy'
+                />
+              );
+            })}
+          </LoopSlider>
 
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget

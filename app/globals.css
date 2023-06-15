@@ -111,6 +111,7 @@ h1 > mark {
   position: relative;
   right: 50%;
   width: 100vw;
+  overflow: hidden;
 }
 
 .whatsapp {
