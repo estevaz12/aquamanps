@@ -58,6 +58,9 @@ function Delayed({ children, delay }) {
   return visible ? children : null;
 }
 
+// TODO: render the markers when the map is in the viewport
+// TODO: show the contents of the page once the js has loaded, add a fadein animation
+
 const locations = [
   {
     title: 'Humacao',
