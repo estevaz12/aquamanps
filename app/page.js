@@ -42,18 +42,16 @@ export default function Home() {
           </h1>
 
           <LoopSlider>
-            {carouselImgs.map((img, i) => {
-              return (
-                <Image
-                  key={i}
-                  src={img.src}
-                  alt={img.name}
-                  width={img.width}
-                  height={img.height}
-                  loading='lazy'
-                />
-              );
-            })}
+            {carouselImgs.map((img, i) => (
+              <Image
+                key={i}
+                src={img.src}
+                alt={img.name}
+                width={img.width}
+                height={img.height}
+                loading='lazy'
+              />
+            ))}
           </LoopSlider>
 
           <p>
@@ -132,6 +130,12 @@ const carouselImgs = [
     name: 'Pentair Logo',
     width: 200,
     height: 75,
+  },
+  {
+    src: '/logos/cpo/cpo2.png',
+    name: 'CPO Logo',
+    width: 100,
+    height: 100,
   },
 ];
 

@@ -1,16 +1,20 @@
 .slider {
+  margin-bottom: var(--typography-spacing-vertical);
+}
+
+.slider > div {
   white-space: nowrap;
   width: fit-content;
   height: fit-content;
   overflow: hidden;
-  animation: 10s linear infinite normal loop;
+  animation: 15s linear infinite normal loop;
 }
 
-.slider > * {
-  margin-right: 4rem;
+.slider > div > * {
+  margin-right: 6rem;
 }
 
-.slider > img {
+.slider > div > img {
   max-width: none;
 }
 
