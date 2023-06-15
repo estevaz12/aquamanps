@@ -41,38 +41,7 @@ export default function Home() {
             EXPERIENCE YOU CAN <mark>TRUST</mark>
           </h1>
 
-          <LoopSlider>
-            {carouselImgs.map((img) => {
-              <Image
-                src={img.src}
-                alt={img.name}
-                width={img.width}
-                height={img.height}
-                loading='lazy'
-              />;
-            })}
-            {/* <Image
-              src={carouselImgs[0].src}
-              alt={carouselImgs[0].name}
-              width={carouselImgs[0].width}
-              height={carouselImgs[0].height}
-              loading='lazy'
-            />
-            <Image
-              src={carouselImgs[1].src}
-              alt={carouselImgs[1].name}
-              width={carouselImgs[1].width}
-              height={carouselImgs[1].height}
-              loading='lazy'
-            />
-            <Image
-              src={carouselImgs[2].src}
-              alt={carouselImgs[2].name}
-              width={carouselImgs[2].width}
-              height={carouselImgs[2].height}
-              loading='lazy'
-            /> */}
-          </LoopSlider>
+          <LoopSlider imgData={carouselImgs} />
 
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget
@@ -134,21 +103,18 @@ const services = [
 
 const carouselImgs = [
   {
-    id: 0,
     src: '/logos/hayward/hayward5.jpg',
     name: 'Hayward Logo',
     width: 200,
     height: 32,
   },
   {
-    id: 1,
     src: '/logos/cpo/cpo2.png',
     name: 'CPO Logo',
     width: 100,
     height: 100,
   },
   {
-    id: 2,
     src: '/logos/pentair/pentair1.png',
     name: 'Pentair Logo',
     width: 200,
