@@ -19,7 +19,6 @@
   text-shadow: var(--card-box-shadow);
 }
 
-/* TODO: shadow animation when count complete */
 @keyframes burst {
   0% {
     background-color: hsla(200, 100%, 77%, 1);

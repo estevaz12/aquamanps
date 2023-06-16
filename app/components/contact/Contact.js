@@ -41,4 +41,4 @@ export default function Contact() {
     </footer>
   );
 }
-// TODO: change all SVGs to svg tag and size to rem
+// TODO: change all SVGs to svgr

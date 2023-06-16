@@ -25,7 +25,6 @@ export default function Map() {
   return <CustomMap />;
 }
 
-// TODO: make so that it displays the markers once in viewport
 function CustomMap() {
   return (
     <GoogleMap

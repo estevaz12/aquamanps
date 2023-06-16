@@ -47,5 +47,3 @@ export default function BigNum({ num, caption, interval }) {
     </div>
   );
 }
-
-// TODO: start the animation when in the viewport
