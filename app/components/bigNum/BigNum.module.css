@@ -9,6 +9,7 @@
   justify-content: center;
   align-items: center;
   background-color: var(--primary);
+  /* animation: 250ms ease 1 normal burst; */
 }
 
 .bigNum {
@@ -19,3 +20,21 @@
 }
 
 /* TODO: shadow animation when count complete */
+@keyframes burst {
+  0% {
+    background-color: hsla(200, 100%, 77%, 1);
+    box-shadow: 0 0 0.1rem 0rem hsl(200, 100%, 66%);
+  }
+  25% {
+    box-shadow: 0 0 0.3rem 0.5rem hsla(200, 100%, 66%, 0.75);
+  }
+  50% {
+    box-shadow: 0 0 0.5rem 1rem hsla(200, 100%, 66%, 0.5);
+  }
+  75% {
+    box-shadow: 0 0 0.7rem 2rem hsla(200, 100%, 66%, 0.25);
+  }
+  100% {
+    box-shadow: 0 0 1.5rem 3rem hsla(200, 100%, 66%, 0);
+  }
+}

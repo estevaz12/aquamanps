@@ -1,23 +1,29 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import styles from './BigNum.module.css';
 import VisChecker from '../VisChecker/VisChecker';
 
-export default function BigNum({ num, caption }) {
+export default function BigNum({ num, caption, interval }) {
   const [count, setCount] = useState(0);
   const [hasReset, setHasReset] = useState(false);
+  const ref = useRef(null);
   const placeholder = <h1 className={styles.bigNum}>{num}+</h1>;
 
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCount(count + 1);
-    }, 10);
+    }, interval);
 
-    if (count === num) clearInterval(intervalId);
+    if (count === num) {
+      clearInterval(intervalId);
+
+      if (hasReset)
+        ref.current.style.animation = `${styles.burst} 500ms linear 1 normal`;
+    }
 
     return () => clearInterval(intervalId);
-  }, [count, num]);
+  }, [count]);
 
   function handleVisibility(isVisible) {
     if (isVisible && !hasReset) {
@@ -28,7 +34,7 @@ export default function BigNum({ num, caption }) {
 
   return (
     <div>
-      <article className={styles.bigNumContainer}>
+      <article className={styles.bigNumContainer} ref={ref}>
         <VisChecker
           placeholder={placeholder}
           onVisibleChange={handleVisibility}

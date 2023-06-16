@@ -59,8 +59,12 @@ export default function Home() {
             nulla ligula. Pellentesque at libero volutpat, accumsan tellus eu,
             hendrerit urna.
           </p>
-          <BigNum num={20} caption='Years of experience' />
-          <BigNum num={250} caption='Satisfied customers over the years' />
+          <BigNum num={20} interval={30} caption='Years of experience' />
+          <BigNum
+            num={250}
+            interval={2}
+            caption='Satisfied customers over the years'
+          />
 
           <Map />
           <h5>Serving customers all over the island</h5>
