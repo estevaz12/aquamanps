@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { GoogleMap, useLoadScript, MarkerF } from '@react-google-maps/api';
+import VisChecker from '../VisChecker/VisChecker';
 
 const options = {
   zoom: 8,
@@ -31,16 +32,18 @@ function CustomMap() {
       mapContainerClassName='full-width map-container'
       options={options}
     >
-      {locations.map((marker, i) => (
-        <Delayed key={i} delay={i * 100}>
-          <MarkerF
-            position={marker.position}
-            animation={google.maps.Animation.DROP}
-            clickable={false}
-            icon='https://earth.google.com/earth/rpc/cc/icon?color=039be5&amp;id=2074&amp;scale=1'
-          />
-        </Delayed>
-      ))}
+      <VisChecker>
+        {locations.map((marker, i) => (
+          <Delayed key={i} delay={i * 100}>
+            <MarkerF
+              position={marker.position}
+              animation={google.maps.Animation.DROP}
+              clickable={false}
+              icon='https://earth.google.com/earth/rpc/cc/icon?color=039be5&amp;id=2074&amp;scale=1'
+            />
+          </Delayed>
+        ))}
+      </VisChecker>
     </GoogleMap>
   );
 }
@@ -58,7 +61,6 @@ function Delayed({ children, delay }) {
   return visible ? children : null;
 }
 
-// TODO: render the markers when the map is in the viewport
 // TODO: show the contents of the page once the js has loaded, add a fadein animation
 
 const locations = [

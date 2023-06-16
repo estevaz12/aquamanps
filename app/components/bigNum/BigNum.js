@@ -7,7 +7,7 @@ import VisChecker from '../VisChecker/VisChecker';
 export default function BigNum({ num, caption }) {
   const [count, setCount] = useState(0);
   const [hasReset, setHasReset] = useState(false);
-  const placeholder = <h1 className={styles.bigNum}>0</h1>;
+  const placeholder = <h1 className={styles.bigNum}>{num}+</h1>;
 
   useEffect(() => {
     const intervalId = setInterval(() => {
