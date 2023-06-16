@@ -1,9 +1,8 @@
-import Image from 'next/image';
 import styles from './Contact.module.css';
 import Form from './Form';
-import Phone from '../../../public/icons/telephone-fill.svg';
-import Email from '../../../public/icons/envelope-fill.svg';
-import WABtn from '../../../public/wa-btn/WhatsAppButtonGreenLarge.svg';
+import Phone from '@/public/icons/telephone-fill.svg';
+import Email from '@/public/icons/envelope-fill.svg';
+import WABtn from '@/public/wa-btn/WhatsAppButtonGreenLarge.svg';
 
 export default function Contact() {
   return (
@@ -36,7 +35,6 @@ export default function Contact() {
         </ul>
       </div>
       <br />
-      <button className='contrast'>Contact Form</button>
       <Form />
     </footer>
   );

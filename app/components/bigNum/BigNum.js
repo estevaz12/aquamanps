@@ -4,7 +4,7 @@ import { useEffect, useState, useRef } from 'react';
 import styles from './BigNum.module.css';
 import VisChecker from '../VisChecker/VisChecker';
 
-export default function BigNum({ num, caption, interval }) {
+export default function BigNum({ num, interval, caption }) {
   const [count, setCount] = useState(0);
   const [hasReset, setHasReset] = useState(false);
   const ref = useRef(null);
@@ -23,7 +23,7 @@ export default function BigNum({ num, caption, interval }) {
     }
 
     return () => clearInterval(intervalId);
-  }, [count]);
+  }, [count, hasReset, interval, num]);
 
   function handleVisibility(isVisible) {
     if (isVisible && !hasReset) {
