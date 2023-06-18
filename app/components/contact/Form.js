@@ -2,12 +2,17 @@
 
 import Link from 'next/link';
 import styles from './Contact.module.css';
-import { toggleModal } from '@/app/lib/modal';
 
 export default function Form() {
   return (
     <>
-      <button className='contrast' onClick={(e) => toggleModal(e)}>
+      <button
+        className='contrast'
+        onClick={async (e) => {
+          const { toggleModal } = await import('@/app/lib/modal');
+          toggleModal(e);
+        }}
+      >
         Contact Form
       </button>
 
