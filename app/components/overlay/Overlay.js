@@ -12,7 +12,7 @@ export default function Overlay() {
         </Link>
       </button> */}
       <button className='whatsapp'>
-        <Link href='https://wa.me/1XXXXXXXXXX?text=Hello%21%20I%20am%20looking%20for%20Aquaman%27s%20pool%20services.'>
+        <Link href='https://wa.me/17876350366?text=Hello%21%20I%20am%20looking%20for%20Aquaman%27s%20pool%20services.'>
           <WhatsApp width='1.5rem' height='1.5rem' />
         </Link>
       </button>

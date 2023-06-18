@@ -10,7 +10,7 @@ export default function Contact() {
       <h1 id='contact'>Contact Us</h1>
       <a
         aria-label='Chat on WhatsApp'
-        href='https://wa.me/1XXXXXXXXXX?text=Hello%21%20I%20am%20looking%20for%20Aquaman%27s%20pool%20services.'
+        href='https://wa.me/17876350366?text=Hello%21%20I%20am%20looking%20for%20Aquaman%27s%20pool%20services.'
       >
         <WABtn />
       </a>
