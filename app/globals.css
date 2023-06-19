@@ -122,3 +122,9 @@ h1 > mark {
   background-color: var(--whatsapp);
   border-color: var(--whatsapp);
 }
+
+dialog article > header .close {
+  width: 1.5rem;
+  height: 1.5rem;
+  opacity: 1;
+}

@@ -49,7 +49,6 @@ export default function Home() {
                 alt={img.name}
                 width={img.width}
                 height={img.height}
-                loading='lazy'
               />
             ))}
           </LoopSlider>

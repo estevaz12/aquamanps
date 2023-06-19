@@ -1,5 +1,6 @@
 .logo {
   color: #4fc4ff;
   text-decoration: underline yellow 3px;
+  -webkit-text-decoration: underline yellow 3px;
   margin: 0;
 }

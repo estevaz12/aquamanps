@@ -2,8 +2,17 @@
 
 import Link from 'next/link';
 import styles from './Contact.module.css';
+import { useState } from 'react';
+import Check from '@/public/icons/send-check-fill.svg';
 
 export default function Form() {
+  const [submitted, setSubmitted] = useState(false);
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    setSubmitted(true);
+  }
+
   return (
     <>
       <button
@@ -23,59 +32,70 @@ export default function Form() {
               href='#contact'
               aria-label='Close'
               className='close'
-              onClick={(e) => toggleModal(e)}
+              onClick={async (e) => {
+                const { toggleModal } = await import('@/app/lib/modal');
+                toggleModal(e);
+              }}
             />
-            Sen us a message
+            Send us a message
           </header>
 
-          <form>
-            <div className='grid'>
-              <label htmlFor='firstname'>
-                First name
+          {!submitted ? (
+            <form onSubmit={(e) => handleSubmit(e)}>
+              <div className='grid'>
+                <label htmlFor='firstname'>
+                  First name
+                  <input
+                    type='text'
+                    id='firstname'
+                    name='firstname'
+                    placeholder='First name'
+                    required
+                  />
+                </label>
+
+                <label htmlFor='lastname'>
+                  Last name
+                  <input
+                    type='text'
+                    id='lastname'
+                    name='lastname'
+                    placeholder='Last name'
+                    required
+                  />
+                </label>
+              </div>
+
+              <label htmlFor='email'>
+                Email
                 <input
-                  type='text'
-                  id='firstname'
-                  name='firstname'
-                  placeholder='First name'
+                  type='email'
+                  id='email'
+                  name='email'
+                  placeholder='Email'
                   required
                 />
               </label>
 
-              <label htmlFor='lastname'>
-                Last name
-                <input
-                  type='text'
-                  id='lastname'
-                  name='lastname'
-                  placeholder='Last name'
-                  required
-                />
+              <label htmlFor='message'>
+                Message
+                <textarea
+                  id='message'
+                  name='message'
+                  placeholder="Hello! I am looking for Aquaman's pool services."
+                  rows={3}
+                ></textarea>
               </label>
+
+              <button type='submit'>Submit</button>
+            </form>
+          ) : (
+            <div className='center-text submitted'>
+              <Check width='5rem' height='5rem' />
+              <h1 className='contrast'>Sent</h1>
+              We will be in touch as soon as possible!
             </div>
-
-            <label htmlFor='email'>
-              Email
-              <input
-                type='email'
-                id='email'
-                name='email'
-                placeholder='Email'
-                required
-              />
-            </label>
-
-            <label htmlFor='message'>
-              Message
-              <textarea
-                id='message'
-                name='message'
-                placeholder="Hello! I am looking for Aquaman's pool services."
-                rows={3}
-              ></textarea>
-            </label>
-
-            <button type='submit'>Submit</button>
-          </form>
+          )}
         </article>
       </dialog>
     </>

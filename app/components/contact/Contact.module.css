@@ -1,6 +1,5 @@
 .contact {
   background-color: var(--primary-hover);
-  color: var(--primary-inverse);
 }
 
 .contact * {
@@ -27,6 +26,20 @@
   margin: auto;
 }
 
+.contact button {
+  background-color: var(--contrast);
+  border-color: var(--contrast);
+  color: var(--contrast-inverse);
+}
+
+.contact button:hover {
+  background-color: var(--contrast-hover);
+}
+
+.contact button:focus {
+  background-color: var(--contrast-focus);
+}
+
 .contactForm article {
   text-align: left;
   overflow-y: hidden;
@@ -42,9 +55,7 @@
   margin-bottom: calc(var(--block-spacing-vertical) / 2);
 }
 
-.contactForm label,
-.contactForm input,
-.contactForm textarea {
+.contactForm * :not(header, button) {
   color: var(--contrast);
 }
 
@@ -52,16 +63,10 @@
   width: 100%;
 }
 
-.contact button {
-  background-color: var(--contrast);
-  border-color: var(--contrast);
-  color: var(--contrast-inverse);
+.contactForm div.submitted {
+  width: 100%;
 }
 
-.contact button:hover {
-  background-color: var(--contrast-hover);
-}
-
-.contact button:focus {
-  background-color: var(--contrast-focus);
+.contactForm svg {
+  margin: var(--block-spacing-vertical) 0;
 }
