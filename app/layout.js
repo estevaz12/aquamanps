@@ -30,3 +30,5 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+
+// TODO: add loading state (loading.js file)

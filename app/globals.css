@@ -123,6 +123,10 @@ h1 > mark {
   border-color: var(--whatsapp);
 }
 
+.error {
+  color: var(--del-color) !important;
+}
+
 dialog article > header .close {
   width: 1.5rem;
   height: 1.5rem;
