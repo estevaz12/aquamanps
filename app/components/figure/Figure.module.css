@@ -1,4 +1,69 @@
-.img {
+.imgContainer {
+  height: 240px;
   width: 100%;
-  height: auto;
+  overflow: hidden;
+}
+
+.after {
+  position: relative;
+}
+
+.before {
+  height: inherit;
+  filter: hue-rotate(90deg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  max-width: 100%;
+}
+
+.before img {
+  object-fit: cover;
+  object-position: 0%;
+}
+
+input.slider {
+  margin: 0;
+  position: relative;
+  left: 0;
+  height: 100%;
+}
+
+input.slider[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: var(--primary-inverse);
+  border: 1px solid var(--primary-inverse);
+  box-shadow: var(--card-box-shadow);
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  background-image: url('/icons/chevron-expand.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transform: rotate(90deg);
+}
+
+input.slider[type='range']::-moz-range-thumb {
+  background-color: var(--primary-inverse);
+  border: 1px solid var(--primary-inverse);
+  box-shadow: var(--box-shadow);
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  background-image: url('/icons/chevron-expand.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transform: rotate(90deg);
+}
+
+input.slider[type='range']::-webkit-slider-runnable-track {
+  background-color: transparent; /* Set the track color */
+}
+
+input.slider[type='range']::-moz-range-track {
+  background-color: transparent; /* Set the track color */
 }
