@@ -9,14 +9,11 @@ import Failed from '@/public/icons/send-x-fill.svg';
 export default function Form() {
   // init = 0, success = 200, error = 500
   const [status, setStatus] = useState(0);
-  const [data, setData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
+  const [submitting, setSubmitting] = useState(false);
 
   async function handleSubmit(e) {
     e.preventDefault();
+    setSubmitting(true);
 
     // get form data
     const formData = new FormData(e.target);
@@ -63,54 +60,85 @@ export default function Form() {
             switch (status) {
               case 0:
                 return (
-                  <form onSubmit={(e) => handleSubmit(e)}>
-                    <div className='grid'>
-                      <label htmlFor='firstname'>
-                        First name
-                        <input
-                          type='text'
-                          id='firstname'
-                          name='firstname'
-                          placeholder='First name'
-                          required
-                        />
-                      </label>
-
-                      <label htmlFor='lastname'>
-                        Last name
-                        <input
-                          type='text'
-                          id='lastname'
-                          name='lastname'
-                          placeholder='Last name'
-                          required
-                        />
-                      </label>
+                  <>
+                    <div className='spacer'>
+                      <small>
+                        <em className='muted'>
+                          <span className='error'>*</span> All fields required
+                        </em>
+                      </small>
                     </div>
+                    <form onSubmit={(e) => handleSubmit(e)}>
+                      <div className='grid'>
+                        <label htmlFor='firstname'>
+                          First name
+                          <input
+                            type='text'
+                            id='firstname'
+                            name='firstname'
+                            placeholder='First name'
+                            disabled={submitting}
+                            required
+                          />
+                        </label>
 
-                    <label htmlFor='email'>
-                      Email
-                      <input
-                        type='email'
-                        id='email'
-                        name='email'
-                        placeholder='Email'
-                        required
-                      />
-                    </label>
+                        <label htmlFor='lastname'>
+                          Last name
+                          <input
+                            type='text'
+                            id='lastname'
+                            name='lastname'
+                            placeholder='Last name'
+                            disabled={submitting}
+                            required
+                          />
+                        </label>
+                      </div>
 
-                    <label htmlFor='message'>
-                      Message
-                      <textarea
-                        id='message'
-                        name='message'
-                        placeholder="Hello! I am looking for Aquaman's pool services."
-                        rows={3}
-                      ></textarea>
-                    </label>
+                      <div className='grid'>
+                        <label htmlFor='email'>
+                          Email
+                          <input
+                            type='email'
+                            id='email'
+                            name='email'
+                            placeholder='Email'
+                            disabled={submitting}
+                            required
+                          />
+                        </label>
+                        <label htmlFor='tel'>
+                          Phone Number
+                          <input
+                            type='tel'
+                            id='tel'
+                            name='tel'
+                            placeholder='(XXX) XXX-XXX'
+                            disabled={submitting}
+                            required
+                          />
+                        </label>
+                      </div>
 
-                    <button type='submit'>Send</button>
-                  </form>
+                      <label htmlFor='message'>
+                        Message
+                        <textarea
+                          id='message'
+                          name='message'
+                          placeholder="Hello! I am looking for Aquaman's pool services."
+                          rows={3}
+                          disabled={submitting}
+                          required
+                        ></textarea>
+                      </label>
+
+                      {!submitting ? (
+                        <button type='submit'>Send</button>
+                      ) : (
+                        <button aria-busy='true'>Sending...</button>
+                      )}
+                    </form>
+                  </>
                 );
 
               case 200:
@@ -118,7 +146,7 @@ export default function Form() {
                   <div className='center-text submitted'>
                     <Check width='5rem' height='5rem' />
                     <h1 className='contrast'>Sent</h1>
-                    We will be in touch as soon as possible!
+                    We will get in touch as soon as possible!
                   </div>
                 );
 

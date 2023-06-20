@@ -30,12 +30,12 @@ const isModalOpen = (modal) => {
 
 // Open modal
 const openModal = (modal) => {
-  // if (isScrollbarVisible()) {
-  //   document.documentElement.style.setProperty(
-  //     '--scrollbar-width',
-  //     `${getScrollbarWidth()}px`
-  //   );
-  // }
+  if (isScrollbarVisible()) {
+    document.documentElement.style.setProperty(
+      '--scrollbar-width',
+      `${getScrollbarWidth()}px`
+    );
+  }
   document.documentElement.classList.add(isOpenClass, openingClass);
   setTimeout(() => {
     visibleModal = modal;
@@ -50,7 +50,7 @@ const closeModal = (modal) => {
   document.documentElement.classList.add(closingClass);
   setTimeout(() => {
     document.documentElement.classList.remove(closingClass, isOpenClass);
-    // document.documentElement.style.removeProperty('--scrollbar-width');
+    document.documentElement.style.removeProperty('--scrollbar-width');
     modal.removeAttribute('open');
   }, animationDuration);
 };

@@ -127,6 +127,14 @@ h1 > mark {
   color: var(--del-color) !important;
 }
 
+.muted {
+  color: var(--muted-color) !important;
+}
+
+.spacer {
+  margin-bottom: var(--spacing);
+}
+
 dialog article > header .close {
   width: 1.5rem;
   height: 1.5rem;

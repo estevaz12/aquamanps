@@ -3,8 +3,7 @@ import nodemailer from 'nodemailer';
 
 export async function POST(request) {
   // get form data from request body
-  const { firstname, lastname, email, message } = request.body;
-  console.log('Form data:', request.body.firstname);
+  const { firstname, lastname, email, tel, message } = await request.json();
 
   try {
     // create reusable transporter object using the default SMTP transport
@@ -21,9 +20,7 @@ export async function POST(request) {
       from: `"Contact Form" ${process.env.GMAIL_USER}`,
       to: process.env.GMAIL_USER,
       subject: 'New Contact Form Submission',
-      text: `Name: ${firstname} ${lastname}
-      Email:${email}
-      Message:${message}`,
+      text: `Name: ${firstname} ${lastname}\n\nEmail: ${email}\n\nPhone: ${tel}\n\nMessage:\n${message}`,
     });
 
     return NextResponse.json({ status: 'success', message: 'Sent' });
