@@ -4,8 +4,8 @@ import LoopSlider from './components/loopSlider/LoopSlider';
 import BigNum from './components/bigNum/BigNum';
 import Map from './components/map/Map';
 import Link from 'next/link';
-import Water from '../public/icons/water.svg';
-import Tools from '../public/icons/tools.svg';
+import Water from '@/public/icons/water.svg';
+import Tools from '@/public/icons/tools.svg';
 import './styles.css';
 
 export const metadata = {};
@@ -141,5 +141,3 @@ const carouselImgs = [
     height: 100,
   },
 ];
-
-// TODO: change wherever I use styles.class to be interpolated with `${styles.class}`

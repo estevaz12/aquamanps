@@ -2,11 +2,11 @@
 
 import styles from './Navbar.module.css';
 import Logo from '../logo/Logo';
-import Menu from '../../../public/icons/list.svg';
-import Close from '../../../public/icons/x-lg.svg';
+import Menu from '@/public/icons/list.svg';
+import Close from '@/public/icons/x-lg.svg';
 import { useState } from 'react';
 import Link from 'next/link';
-import Globe from '../../../public/icons/globe2.svg';
+import Globe from '@/public/icons/globe2.svg';
 
 export default function Navbar() {
   const [toggled, setToggled] = useState(false);
@@ -57,7 +57,7 @@ export default function Navbar() {
         <aside className={`container center-text`}>
           <nav>
             <p>
-              <a href='#'>ESPAÑOL</a>
+              <Link href='#'>ESPAÑOL</Link>
             </p>
             <ul>
               {items.map((item) => (

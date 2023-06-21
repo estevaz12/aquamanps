@@ -37,3 +37,11 @@ export default function BeforeAfterFig({ className }) {
     </figure>
   );
 }
+
+// TODO: make page responsive
+// TODO: make compatible accross browsers and devices
+// TODO: make it search engine optimized
+// TODO: i18n routing
+// TODO: redisign with Tailwind
+// TODO: fonts
+// TODO: about page

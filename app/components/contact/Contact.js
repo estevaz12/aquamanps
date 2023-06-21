@@ -3,17 +3,18 @@ import Form from './Form';
 import Phone from '@/public/icons/telephone-fill.svg';
 import Email from '@/public/icons/envelope-fill.svg';
 import WABtn from '@/public/wa-btn/WhatsAppButtonGreenLarge.svg';
+import Link from 'next/link';
 
 export default function Contact() {
   return (
-    <footer className={'container center-text ' + styles.contact}>
+    <footer className={`container center-text ${styles.contact}`}>
       <h1 id='contact'>Contact Us</h1>
-      <a
+      <Link
         aria-label='Chat on WhatsApp'
         href='https://wa.me/17876350366?text=Hello%21%20I%20am%20looking%20for%20Aquaman%27s%20pool%20services.'
       >
         <WABtn />
-      </a>
+      </Link>
       <br />
       <br />
       <div className='container'>
@@ -25,12 +26,12 @@ export default function Contact() {
           <li>
             <Phone />
             &emsp;
-            <a href='tel:+1(787)635-0366'>(787) 635-0366</a>
+            <Link href='tel:+1(787)635-0366'>(787) 635-0366</Link>
           </li>
           <li>
             <Email />
             &emsp;
-            <a href='mailto:aquamanps@gmail.com'>aquamanps@gmail.com</a>
+            <Link href='mailto:aquamanps@gmail.com'>aquamanps@gmail.com</Link>
           </li>
         </ul>
       </div>
@@ -39,4 +40,3 @@ export default function Contact() {
     </footer>
   );
 }
-// TODO: change all SVGs to svgr

@@ -133,9 +133,13 @@ export default function Form() {
                       </label>
 
                       {!submitting ? (
-                        <button type='submit'>Send</button>
+                        <button className='contrast' type='submit'>
+                          Send
+                        </button>
                       ) : (
-                        <button aria-busy='true'>Sending...</button>
+                        <button className='contrast' aria-busy='true'>
+                          Sending...
+                        </button>
                       )}
                     </form>
                   </>
@@ -145,7 +149,7 @@ export default function Form() {
                 return (
                   <div className='center-text submitted'>
                     <Check width='5rem' height='5rem' />
-                    <h1 className='contrast'>Sent</h1>
+                    <h1>Sent</h1>
                     We will get in touch as soon as possible!
                   </div>
                 );
@@ -165,6 +169,3 @@ export default function Form() {
     </>
   );
 }
-
-// TODO: change all a tags to link components
-// TODO: add loading animation to contact form button

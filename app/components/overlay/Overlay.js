@@ -1,6 +1,6 @@
 import styles from './Overlay.module.css';
-import UpArrow from '../../../public/icons/arrow-up.svg';
-import WhatsApp from '../../../public/icons/wa-white.svg';
+import UpArrow from '@/public/icons/arrow-up.svg';
+import WhatsApp from '@/public/icons/wa-white.svg';
 import Link from 'next/link';
 
 export default function Overlay() {
@@ -19,6 +19,3 @@ export default function Overlay() {
     </div>
   );
 }
-
-// TODO: wherever i use var(--contrast) for color, try instead adding class 'contrast' to the element
-// TODO: smooth scroll up

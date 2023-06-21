@@ -26,20 +26,6 @@
   margin: auto;
 }
 
-.contact button {
-  background-color: var(--contrast);
-  border-color: var(--contrast);
-  color: var(--contrast-inverse);
-}
-
-.contact button:hover {
-  background-color: var(--contrast-hover);
-}
-
-.contact button:focus {
-  background-color: var(--contrast);
-}
-
 .contactForm article {
   text-align: left;
   padding-bottom: calc(var(--block-spacing-vertical) / 2);

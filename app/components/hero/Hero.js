@@ -13,7 +13,7 @@ export default function Hero() {
           className={styles.heroImage}
           priority={true}
         />
-        <header className={'container center-text ' + styles.heroText}>
+        <header className={`container center-text ${styles.heroText}`}>
           <hgroup>
             <Logo />
             <h2>Experience you can trust</h2>

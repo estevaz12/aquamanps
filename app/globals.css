@@ -65,8 +65,6 @@ body {
   --whatsapp: #25d366;
 }
 
-/*TODO: change px to rem; check if this applies to everything or just text */
-
 html {
   scroll-behavior: smooth !important;
 }

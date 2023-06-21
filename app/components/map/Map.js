@@ -60,8 +60,6 @@ function Delayed({ children, delay }) {
   return visible ? children : null;
 }
 
-// TODO: show the contents of the page once the js has loaded, add a fadein animation
-
 const locations = [
   {
     title: 'Humacao',
