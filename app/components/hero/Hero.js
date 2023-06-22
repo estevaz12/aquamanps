@@ -5,7 +5,7 @@ import Logo from '../logo/Logo';
 export default function Hero() {
   return (
     <>
-      <div id='#top' className={styles.hero}>
+      <div id='#top' className={`full-width ${styles.hero}`}>
         <Image
           src='/images/pool1.jpg'
           alt='Pool'
@@ -20,7 +20,6 @@ export default function Hero() {
           </hgroup>
         </header>
       </div>
-      <div className={styles.heroMargin}></div>
     </>
   );
 }

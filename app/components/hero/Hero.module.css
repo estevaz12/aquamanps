@@ -1,9 +1,6 @@
 .hero {
   background-color: #394046;
-  width: 100vw;
   height: 85vh;
-  position: absolute;
-  overflow: hidden;
   top: 0;
   z-index: -1;
 }
@@ -12,19 +9,14 @@
   object-position: center;
   object-fit: cover;
   z-index: -2;
-  filter: brightness(70%) grayscale(50%);
+  filter: brightness(60%) grayscale(50%);
 }
 
 .heroText {
   position: relative;
-  /* margin-top: 75%; */
   top: 50%;
 }
 
 .heroText h2 {
   color: var(--primary-inverse);
-}
-
-.heroMargin {
-  margin-bottom: 85vh;
 }
