@@ -1,4 +1,5 @@
 import '@picocss/pico';
+import './lib/pico-bootstrap-grid.min.css';
 import './globals.css';
 import { Inter } from 'next/font/google';
 import Navbar from './components/nav/Navbar';

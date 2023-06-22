@@ -6,9 +6,34 @@
   margin-top: 0;
 }
 
+#services article img {
+  height: 75px;
+  width: auto;
+}
+
 #services article footer {
   background-color: var(--contrast);
   color: var(--contrast-inverse);
+  padding: var(--block-spacing-horizontal);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 767px) {
+    min-height: 0;
+  }
+
+  @media (min-width: 768px) and (max-width: 991px) {
+    min-height: 6.8rem;
+  }
+
+  @media (min-width: 992px) {
+    min-height: 0;
+  }
+
+  @media (min-width: 1200px) {
+    min-height: 10.675rem;
+  }
 }
 
 #experience {

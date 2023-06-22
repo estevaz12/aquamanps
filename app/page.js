@@ -22,12 +22,14 @@ export default function Home() {
 
         <section id='services'>
           <h1>SERVICES</h1>
-          <div className='grid'>
+          <div className='row'>
             {services.map((service) => (
-              <article key={service.id}>
-                {service.element}
-                <footer>{service.name}</footer>
-              </article>
+              <div key={service.id} className='col-md-6 col-xl-3'>
+                <article>
+                  {service.element}
+                  <footer>{service.name}</footer>
+                </article>
+              </div>
             ))}
           </div>
         </section>
@@ -85,7 +87,7 @@ const services = [
         src='/logos/hayward/hayward2.jpg'
         alt='Hayward Warranty Servicing'
         width={200}
-        height={76}
+        height={75}
         loading='lazy'
       />
     ),
@@ -98,7 +100,7 @@ const services = [
         src='/logos/pentair/pentair1.png'
         alt='Pentair Warranty Servicing'
         width={200}
-        height={74}
+        height={75}
         loading='lazy'
       />
     ),
