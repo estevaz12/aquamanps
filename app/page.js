@@ -7,6 +7,10 @@ import Link from 'next/link';
 import Water from '@/public/icons/water.svg';
 import Tools from '@/public/icons/tools.svg';
 import './styles.css';
+import haywardPic from '@/public/logos/hayward/hayward5.jpg';
+import haywardServPic from '@/public/logos/hayward/hayward2.jpg';
+import pentairPic from '@/public/logos/pentair/pentair1.png';
+import cpoPic from '@/public/logos/cpo/cpo2.png';
 
 export const metadata = {};
 
@@ -35,7 +39,7 @@ export default function Home() {
         </section>
 
         <section id='before-after'>
-          <BeforeAfterFig className='full-width' />
+          <BeforeAfterFig />
         </section>
 
         <section id='experience'>
@@ -84,10 +88,8 @@ const services = [
     name: 'Hayward Warranty Servicing',
     element: (
       <Image
-        src='/logos/hayward/hayward2.jpg'
+        src={haywardServPic}
         alt='Hayward Warranty Servicing'
-        width={200}
-        height={75}
         loading='lazy'
       />
     ),
@@ -96,13 +98,7 @@ const services = [
     id: 1,
     name: 'Pentair Warranty Servicing',
     element: (
-      <Image
-        src='/logos/pentair/pentair1.png'
-        alt='Pentair Warranty Servicing'
-        width={200}
-        height={75}
-        loading='lazy'
-      />
+      <Image src={pentairPic} alt='Pentair Warranty Servicing' loading='lazy' />
     ),
   },
   {
@@ -119,25 +115,25 @@ const services = [
 
 const carouselImgs = [
   {
-    src: '/logos/hayward/hayward5.jpg',
+    src: haywardPic,
     name: 'Hayward Logo',
     width: 200,
     height: 32,
   },
   {
-    src: '/logos/cpo/cpo2.png',
+    src: cpoPic,
     name: 'CPO Logo',
     width: 100,
     height: 100,
   },
   {
-    src: '/logos/pentair/pentair1.png',
+    src: pentairPic,
     name: 'Pentair Logo',
     width: 200,
     height: 75,
   },
   {
-    src: '/logos/cpo/cpo2.png',
+    src: cpoPic,
     name: 'CPO Logo',
     width: 100,
     height: 100,

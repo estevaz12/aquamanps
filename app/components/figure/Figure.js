@@ -3,21 +3,27 @@
 import styles from './Figure.module.css';
 import Image from 'next/image';
 import { useState } from 'react';
+import beforePic from '@/public/images/pool2.jpg';
+import { useWindowDimensions } from '@/app/lib/hooks';
 
-export default function BeforeAfterFig({ className }) {
+export default function BeforeAfterFig() {
   const [sliderVal, setSliderVal] = useState(50);
+  const { width } = useWindowDimensions();
 
   function handleChange(e) {
     setSliderVal(e.target.value);
   }
 
   return (
-    <figure className={className}>
-      <div className={`${styles.imgContainer} ${styles.after}`}>
-        <Image src='/images/pool2.jpg' alt='Pool' fill={true} />
-        <div className={`${styles.before}`} style={{ width: `${sliderVal}%` }}>
-          <Image src='/images/pool2.jpg' alt='Pool' fill={true} />
-        </div>
+    <figure className='full-width'>
+      <div className={styles.imgContainer}>
+        <Image src={beforePic} alt='Pool' className={styles.after} />
+        <Image
+          src={beforePic}
+          alt='Pool'
+          className={styles.before}
+          style={{ width: `${sliderVal}%` }}
+        />
         <input
           type='range'
           min='1'

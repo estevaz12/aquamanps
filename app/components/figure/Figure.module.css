@@ -1,31 +1,27 @@
 .imgContainer {
-  height: 240px;
-  width: 100%;
   overflow: hidden;
-}
-
-.after {
   position: relative;
 }
 
+.after {
+  width: 100%;
+  height: auto;
+}
+
 .before {
-  height: inherit;
+  height: 100%;
   filter: hue-rotate(90deg);
   position: absolute;
   top: 0;
   left: 0;
-  width: 50%;
   max-width: 100%;
-}
-
-.before img {
   object-fit: cover;
-  object-position: 0%;
+  object-position: left top;
 }
 
 input.slider {
   margin: 0;
-  position: relative;
+  position: absolute;
   left: 0;
   height: 100%;
 }
