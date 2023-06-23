@@ -8,14 +8,20 @@ import { useWindowDimensions } from '@/app/lib/hooks';
 
 export default function BeforeAfterFig() {
   const [sliderVal, setSliderVal] = useState(50);
-  const { width } = useWindowDimensions();
+  const { width, height } = useWindowDimensions();
+  const breakpoint = width > 768 && height <= 1080;
+  const makeResponsive = {
+    position: 'static',
+    margin: '0 auto',
+    width: '70%',
+  };
 
   function handleChange(e) {
     setSliderVal(e.target.value);
   }
 
   return (
-    <figure className='full-width'>
+    <figure className='full-width' style={breakpoint ? makeResponsive : {}}>
       <div className={styles.imgContainer}>
         <Image src={beforePic} alt='Pool' className={styles.after} />
         <Image
