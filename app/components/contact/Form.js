@@ -95,30 +95,28 @@ export default function Form() {
                         </label>
                       </div>
 
-                      <div className='grid'>
-                        <label htmlFor='email'>
-                          Email
-                          <input
-                            type='email'
-                            id='email'
-                            name='email'
-                            placeholder='Email'
-                            disabled={submitting}
-                            required
-                          />
-                        </label>
-                        <label htmlFor='tel'>
-                          Phone Number
-                          <input
-                            type='tel'
-                            id='tel'
-                            name='tel'
-                            placeholder='(XXX) XXX-XXX'
-                            disabled={submitting}
-                            required
-                          />
-                        </label>
-                      </div>
+                      <label htmlFor='email'>
+                        Email
+                        <input
+                          type='email'
+                          id='email'
+                          name='email'
+                          placeholder='Email'
+                          disabled={submitting}
+                          required
+                        />
+                      </label>
+                      <label htmlFor='tel'>
+                        Phone Number
+                        <input
+                          type='tel'
+                          id='tel'
+                          name='tel'
+                          placeholder='(XXX) XXX-XXX'
+                          disabled={submitting}
+                          required
+                        />
+                      </label>
 
                       <label htmlFor='message'>
                         Message

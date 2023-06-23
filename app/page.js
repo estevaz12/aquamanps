@@ -11,6 +11,8 @@ import haywardPic from '@/public/logos/hayward/hayward5.jpg';
 import haywardServPic from '@/public/logos/hayward/hayward2.jpg';
 import pentairPic from '@/public/logos/pentair/pentair1.png';
 import cpoPic from '@/public/logos/cpo/cpo2.png';
+import { Suspense } from 'react';
+import Loading from './loading';
 
 export const metadata = {};
 
@@ -39,7 +41,9 @@ export default function Home() {
         </section>
 
         <section id='before-after'>
-          <BeforeAfterFig />
+          <Suspense fallback={<Loading />}>
+            <BeforeAfterFig />
+          </Suspense>
         </section>
 
         <section id='experience'>
@@ -64,12 +68,18 @@ export default function Home() {
             nulla ligula. Pellentesque at libero volutpat, accumsan tellus eu,
             hendrerit urna.
           </p>
-          <BigNum num={20} interval={30} caption='Years of experience' />
-          <BigNum
-            num={250}
-            interval={2}
-            caption='Satisfied customers over the years'
-          />
+          <div className='row'>
+            <div className='col-md-6'>
+              <BigNum num={20} interval={35} caption='Years of experience' />
+            </div>
+            <div className='col-md-6'>
+              <BigNum
+                num={250}
+                interval={3}
+                caption='Satisfied customers over the years'
+              />
+            </div>
+          </div>
 
           <Map />
           <h5>Serving customers all over the island</h5>
@@ -133,5 +143,3 @@ const carouselImgs = [
     height: 75,
   },
 ];
-
-// TODO: style scrollbar

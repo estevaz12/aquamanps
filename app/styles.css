@@ -40,3 +40,7 @@
 #experience {
   margin-bottom: 0;
 }
+
+#experience p {
+  margin-bottom: var(--block-spacing-vertical);
+}

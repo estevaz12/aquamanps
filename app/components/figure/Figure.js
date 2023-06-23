@@ -54,9 +54,11 @@ export default function BeforeAfterFig() {
 // TODO: consider adding suspense to this
 
 // TODO: make page responsive
+// TODO: make navbar expand
 // TODO: make compatible accross browsers and devices
-// TODO: make it search engine optimized
-// TODO: i18n routing
-// TODO: redisign with Tailwind
 // TODO: fonts
+// TODO: i18n routing
+// TODO: make it search engine optimized
+// TODO: open graph images and all
 // TODO: about page
+// TODO: redisign with Tailwind

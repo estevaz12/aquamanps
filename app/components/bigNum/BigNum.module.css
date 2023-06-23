@@ -9,6 +9,14 @@
   justify-content: center;
   align-items: center;
   background-color: var(--primary);
+  background: linear-gradient(
+    135deg,
+    rgba(82, 197, 255, 1) 0%,
+    rgba(3, 155, 229, 1) 35%,
+    rgba(10, 120, 175, 1) 75%,
+    rgba(15, 95, 136, 1) 90%,
+    rgba(27, 40, 50, 1) 100%
+  );
   /* animation: 250ms ease 1 normal burst; */
 }
 

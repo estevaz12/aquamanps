@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 export default function Contact() {
   return (
-    <footer className={`container center-text ${styles.contact}`}>
+    <footer className={`center-text ${styles.contact}`}>
       <h1 id='contact'>Contact Us</h1>
       <Link
         aria-label='Chat on WhatsApp'
