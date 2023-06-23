@@ -132,10 +132,6 @@ const carouselImgs = [
     width: 200,
     height: 75,
   },
-  {
-    src: cpoPic,
-    name: 'CPO Logo',
-    width: 100,
-    height: 100,
-  },
 ];
+
+// TODO: style scrollbar

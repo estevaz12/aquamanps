@@ -1,12 +1,22 @@
 .slider {
-  margin-bottom: var(--typography-spacing-vertical);
+  max-width: 800px;
+  margin: 0 auto var(--typography-spacing-vertical);
+  overflow: hidden;
+  background: linear-gradient(
+    90deg,
+    #fff,
+    transparent 10%,
+    transparent 90%,
+    #fff
+  );
 }
 
 .slider > div {
+  position: relative;
+  z-index: -1;
   white-space: nowrap;
   width: fit-content;
   height: fit-content;
-  overflow: hidden;
   animation: 15s linear infinite normal loop;
 }
 

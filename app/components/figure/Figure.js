@@ -10,25 +10,26 @@ export default function BeforeAfterFig() {
   const [sliderVal, setSliderVal] = useState(50);
   const { width, height } = useWindowDimensions();
   const breakpoint = width > 768 && height <= 1080;
-  const makeResponsive = {
-    position: 'static',
-    margin: '0 auto',
-    width: '70%',
-  };
 
   function handleChange(e) {
     setSliderVal(e.target.value);
   }
 
   return (
-    <figure className='full-width' style={breakpoint ? makeResponsive : {}}>
+    <figure className={breakpoint ? styles.responsive : 'full-width'}>
       <div className={styles.imgContainer}>
-        <Image src={beforePic} alt='Pool' className={styles.after} />
+        <Image
+          src={beforePic}
+          alt='Pool'
+          className={styles.after}
+          priority={true}
+        />
         <Image
           src={beforePic}
           alt='Pool'
           className={styles.before}
           style={{ width: `${sliderVal}%` }}
+          priority={true}
         />
         <input
           type='range'
@@ -49,6 +50,8 @@ export default function BeforeAfterFig() {
     </figure>
   );
 }
+
+// TODO: consider adding suspense to this
 
 // TODO: make page responsive
 // TODO: make compatible accross browsers and devices

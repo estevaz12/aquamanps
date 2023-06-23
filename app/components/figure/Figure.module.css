@@ -1,3 +1,9 @@
+.responsive {
+  position: static;
+  margin: 0 auto;
+  width: 70%;
+}
+
 .imgContainer {
   overflow: hidden;
   position: relative;
