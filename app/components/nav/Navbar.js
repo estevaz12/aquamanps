@@ -46,7 +46,7 @@ export default function Navbar() {
             {!toggled && (
               <details role='list'>
                 <summary aria-haspopup='listbox' role='link'>
-                  <Globe color='#fff' />
+                  <Globe color='#fff' width='1.25rem' height='1.25rem' />
                 </summary>
                 <ul role='listbox'>
                   <li>
@@ -58,7 +58,13 @@ export default function Navbar() {
           </li>
           {!breakpoint && (
             <li key='menu' onClick={handleClick}>
-              <a href='#'>{toggled ? <Close /> : <Menu />}</a>
+              <a href='#'>
+                {toggled ? (
+                  <Close width='1.25rem' height='1.25rem' />
+                ) : (
+                  <Menu width='1.25rem' height='1.25rem' />
+                )}
+              </a>
             </li>
           )}
         </ul>
