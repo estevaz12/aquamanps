@@ -51,10 +51,6 @@ export default function BeforeAfterFig() {
   );
 }
 
-// TODO: consider adding suspense to this
-
-// TODO: make page responsive
-// TODO: make navbar expand
 // TODO: make compatible accross browsers and devices
 // TODO: fonts
 // TODO: i18n routing

@@ -17,6 +17,10 @@
   text-decoration-thickness: 2px;
 }
 
+.navbar details {
+  margin-left: 2rem;
+}
+
 .navbar > nav a {
   background-color: transparent;
 }
@@ -27,7 +31,7 @@
 }
 
 .navbar summary svg {
-  margin-top: 4px;
+  margin-top: 0.25rem;
 }
 
 .navbar details[role='list'] summary::after {
@@ -63,6 +67,15 @@
   transition: background-color 1s ease;
 }
 
+.extendedNav {
+  margin-left: 1rem;
+  font-size: 1rem;
+}
+
+.extendedNav a:hover {
+  background-color: var(--primary);
+}
+
 @keyframes fadeInOut {
   0% {
     opacity: 0;
@@ -71,4 +84,3 @@
     opacity: 1;
   }
 }
-

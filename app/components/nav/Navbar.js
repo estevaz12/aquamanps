@@ -7,10 +7,13 @@ import Close from '@/public/icons/x-lg.svg';
 import { useState } from 'react';
 import Link from 'next/link';
 import Globe from '@/public/icons/globe2.svg';
+import { useWindowDimensions } from '@/app/lib/hooks';
 
 export default function Navbar() {
   const [toggled, setToggled] = useState(false);
   const toggleClass = toggled ? styles.toggled : '';
+  const { width } = useWindowDimensions();
+  const breakpoint = width >= 1024;
 
   function handleClick(e) {
     e.preventDefault();
@@ -33,6 +36,12 @@ export default function Navbar() {
           </li>
         </ul>
         <ul>
+          {breakpoint &&
+            items.map((item) => (
+              <li key={item} className={styles.extendedNav}>
+                <Link href={`#${item.toLowerCase()}`}>{item}</Link>
+              </li>
+            ))}
           <li key='language'>
             {!toggled && (
               <details role='list'>
@@ -47,9 +56,11 @@ export default function Navbar() {
               </details>
             )}
           </li>
-          <li key='menu' onClick={handleClick}>
-            <a href='#'>{toggled ? <Close /> : <Menu />}</a>
-          </li>
+          {!breakpoint && (
+            <li key='menu' onClick={handleClick}>
+              <a href='#'>{toggled ? <Close /> : <Menu />}</a>
+            </li>
+          )}
         </ul>
       </nav>
 
@@ -67,7 +78,9 @@ export default function Navbar() {
                     setToggled(false);
                   }}
                 >
-                  <Link href={`#${item.toLowerCase()}`}>{item}</Link>
+                  <Link href={`#${item.toLowerCase()}`}>
+                    {item.toUpperCase()}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -78,4 +91,4 @@ export default function Navbar() {
   );
 }
 
-const items = ['CONTACT', 'SERVICES', 'EXPERIENCE', 'ABOUT'];
+const items = ['Contact', 'Services', 'Experience', 'About'];
