@@ -1,6 +1,7 @@
 .logo {
   color: var(--logo);
-  text-decoration: underline yellow 3px !important;
-  -webkit-text-decoration: underline yellow 3px !important;
+  text-decoration: underline yellow solid;
+  -webkit-text-decoration: underline yellow solid;
+  text-decoration-thickness: 3px;
   margin: 0;
 }
