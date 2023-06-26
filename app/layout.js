@@ -1,14 +1,14 @@
 import '@picocss/pico';
 import './lib/pico-bootstrap-grid.min.css';
 import './globals.css';
-import { Inter } from 'next/font/google';
+// import { Inter } from 'next/font/google';
 import Navbar from './components/nav/Navbar';
 import Hero from './components/hero/Hero';
 import Contact from './components/contact/Contact';
 import Footer from './components/footer/Footer';
 import Overlay from './components/overlay/Overlay';
 
-const inter = Inter({ subsets: ['latin'] });
+// const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
   title: 'Aquaman Pool Services',
@@ -18,7 +18,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang='en' data-theme='light'>
-      <body className={inter.className}>
+      <body /*className={inter.className}*/>
         <Hero />
         <Navbar />
 

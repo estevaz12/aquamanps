@@ -51,8 +51,6 @@ export default function BeforeAfterFig() {
   );
 }
 
-// TODO: make compatible accross browsers and devices
-// TODO: fonts
 // TODO: i18n routing
 // TODO: make it search engine optimized
 // TODO: open graph images and all
