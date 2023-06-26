@@ -19,22 +19,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-  @media (max-width: 767px) {
-    min-height: 0;
-  }
-
-  @media (min-width: 768px) and (max-width: 992px) {
-    min-height: 6.8rem;
-  }
-
-  @media (min-width: 992px) {
-    min-height: 0;
-  }
-
-  @media (min-width: 1200px) {
-    min-height: 10.675rem;
-  }
 }
 
 #experience {
@@ -43,4 +27,28 @@
 
 #experience p {
   margin-bottom: var(--block-spacing-vertical);
+}
+
+@media (max-width: 767px) {
+  #services article footer {
+    min-height: 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  #services article footer {
+    min-height: 6.8rem;
+  }
+}
+
+@media (min-width: 992px) {
+  #services article footer {
+    min-height: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  #services article footer {
+    min-height: 10.675rem;
+  }
 }
