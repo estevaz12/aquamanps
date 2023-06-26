@@ -63,6 +63,7 @@ body {
   --switch-color: var(--primary-inverse);
   --switch-checked-background-color: var(--primary);
   --whatsapp: #25d366;
+  --logo: #4fc4ff;
 }
 
 html {
