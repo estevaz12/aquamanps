@@ -2,8 +2,10 @@ import Image from 'next/image';
 import styles from './Hero.module.css';
 import Logo from '../logo/Logo';
 import heroPic from '@/public/images/pool1.jpg';
+import { useTranslations } from 'next-intl';
 
 export default function Hero() {
+  const t = useTranslations('Hero');
   return (
     <>
       <div id='#top' className={`full-width ${styles.hero}`}>
@@ -17,7 +19,7 @@ export default function Hero() {
         <header className={`container center-text ${styles.heroText}`}>
           <hgroup>
             <Logo />
-            <h2>Experience you can trust</h2>
+            <h2>{t('subtitle')}</h2>
           </hgroup>
         </header>
       </div>

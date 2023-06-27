@@ -1,15 +1,17 @@
+import { useTranslations } from 'next-intl';
 import Logo from '../logo/Logo';
 import styles from './Footer.module.css';
 import Link from 'next/link';
 
-export default function Footer() {
+export default function Footer({ navItems }) {
+  const t = useTranslations('Footer');
   return (
     <>
       <footer id='footer' className={`center-text ${styles.footer}`}>
         <ul>
-          {items.map((item) => (
+          {navItems.map((item, i) => (
             <li key={item}>
-              <Link href={`#${item.toLowerCase()}`}>{item}</Link>
+              <Link href={`#${navIds[i]}`}>{item.toUpperCase()}</Link>
             </li>
           ))}
         </ul>
@@ -21,7 +23,7 @@ export default function Footer() {
         <small>
           &copy; 2023 Aquaman Pool Services |{' '}
           <Link href='mailto:estebanvazquez1607@gmail.com'>
-            Contact Webmaster
+            {t('webmaster')}
           </Link>
         </small>
       </footer>
@@ -29,4 +31,4 @@ export default function Footer() {
   );
 }
 
-const items = ['CONTACT', 'SERVICES', 'EXPERIENCE', 'ABOUT'];
+const navIds = ['contact', 'services', 'experience', 'about'];

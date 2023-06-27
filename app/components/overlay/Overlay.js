@@ -1,9 +1,12 @@
 import styles from './Overlay.module.css';
 import UpArrow from '@/public/icons/arrow-up.svg';
 import WhatsApp from '@/public/icons/wa-white.svg';
+import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 
 export default function Overlay() {
+  const t = useTranslations('WhatsApp');
+
   return (
     <div className={styles.overlay}>
       {/* <button className='contrast'>
@@ -12,7 +15,7 @@ export default function Overlay() {
         </Link>
       </button> */}
       <button className='whatsapp'>
-        <Link href='https://wa.me/17876350366?text=Hello%21%20I%20am%20looking%20for%20Aquaman%27s%20pool%20services.'>
+        <Link href={`https://wa.me/17876350366?text=${t('text')}`}>
           <WhatsApp width='1.5rem' height='1.5rem' />
         </Link>
       </button>

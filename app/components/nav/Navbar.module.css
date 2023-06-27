@@ -31,15 +31,15 @@
 }
 
 .navbar summary svg {
-  margin-top: 0.25rem;
+  margin: auto 0;
 }
 
 .navbar details[role='list'] summary::after {
-  display: none;
+  /* display: none; */
 }
 
 .navbar details[role='list'] summary + ul {
-  left: auto;
+  /* left: auto; */
 }
 
 .navbar details [role='link']:focus {

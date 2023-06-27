@@ -7,7 +7,7 @@ import Hero from '../components/hero/Hero';
 import Contact from '../components/contact/Contact';
 import Footer from '../components/footer/Footer';
 import Overlay from '../components/overlay/Overlay';
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { notFound } from 'next/navigation';
 
 // const inter = Inter({ subsets: ['latin'] });
@@ -25,17 +25,29 @@ export default function RootLayout({ children, params }) {
     notFound();
   }
 
+  const t = useTranslations();
+  const navItems = [
+    t('Nav.contact'),
+    t('Nav.services'),
+    t('Nav.experience'),
+    t('Nav.about'),
+  ];
+
   return (
     <html lang={locale} data-theme='light'>
       <body /*className={inter.className}*/>
         <Hero />
-        <Navbar />
+        <Navbar
+          locale={locale}
+          nextLang={t('Nav.language')}
+          navItems={navItems}
+        />
 
         {children}
 
         <Overlay />
         <Contact />
-        <Footer />
+        <Footer navItems={navItems} />
       </body>
     </html>
   );

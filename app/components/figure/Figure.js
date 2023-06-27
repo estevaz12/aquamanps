@@ -6,7 +6,7 @@ import { useState } from 'react';
 import beforePic from '@/public/images/pool2.jpg';
 import { useWindowDimensions } from '@/app/lib/hooks';
 
-export default function BeforeAfterFig() {
+export default function BeforeAfterFig({ caption }) {
   const [sliderVal, setSliderVal] = useState(50);
   const { width, height } = useWindowDimensions();
   const breakpoint = width > 768 && height <= 1080;
@@ -44,7 +44,7 @@ export default function BeforeAfterFig() {
 
       <figcaption>
         <small>
-          <i>Drag to see before and after</i>
+          <i>{caption}</i>
         </small>
       </figcaption>
     </figure>

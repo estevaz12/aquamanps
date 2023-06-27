@@ -1,7 +1,65 @@
 {
+  "Nav": {
+    "contact": "Contacto",
+    "services": "Servicios",
+    "experience": "Experiencia",
+    "about": "Nosotros",
+    "language": "English"
+  },
+  "Hero": {
+    "title": "",
+    "subtitle": "Experiencia en la que puedes confiar"
+  },
   "Index": {
+    "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget nulla ligula. Pellentesque at libero volutpat, accumsan tellus eu, hendrerit urna.",
     "services": {
-      "title": "SERVICIOS"
+      "title": "SERVICIOS",
+      "hayward": "Servicio de garantía Hayward",
+      "pentair": "Servicio de garantía Pentair",
+      "pool": "Mantenimiento de piscinas",
+      "equipment": "Instalación y mantenimiento de equipos"
+    },
+    "beforeAfter": "Arrastra para ver antes y después",
+    "experience": {
+      "title": "EXPERIENCIA EN LA QUE PUEDES <mark>CONFIAR</mark>",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget nulla ligula. Pellentesque at libero volutpat, accumsan tellus eu, hendrerit urna.",
+      "years": "Años de experiencia",
+      "customers": "Clientes satisfechos",
+      "locations": "Sirviendo a clientes en toda la isla",
+      "learnMore": "Conoce más"
     }
+  },
+  "Contact": {
+    "title": "Contáctanos",
+    "description": "Nuestro principal canal de contacto es WhatsApp, pero también puedes comunicarte con nosotros por acá:",
+    "form": {
+      "button": "Contactar",
+      "header": "Envíanos un mensaje",
+      "required": "Todos los campos son obligatorios",
+      "first": "Nombre",
+      "last": "Apellido",
+      "email": "Email",
+      "phone": "Teléfono",
+      "message": {
+        "label": "Mensaje",
+        "placeholder": "¡Hola! Estoy buscando los servicios de Aquaman."
+      },
+      "submit": "Enviar",
+      "submitting": "Enviando",
+      "success": {
+        "title": "Enviado",
+        "description": "Estaremos en contacto lo antes posible!"
+      },
+      "failure": {
+        "title": "Hubo un error",
+        "description": "Por favor, intenta más tarde o contáctanos a través de los otros medios."
+      }
+    }
+  },
+  "WhatsApp": {
+    "text": "%C2%A1Hola%21%20Estoy%20buscando%20los%20servicios%20de%20Aquaman."
+  },
+  "Footer": {
+    "webmaster": "Contactar Webmaster"
   }
 }
