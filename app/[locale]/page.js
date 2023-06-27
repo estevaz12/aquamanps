@@ -1,8 +1,8 @@
 import Image from 'next/image';
-import BeforeAfterFig from './components/figure/Figure';
-import LoopSlider from './components/loopSlider/LoopSlider';
-import BigNum from './components/bigNum/BigNum';
-import Map from './components/map/Map';
+import BeforeAfterFig from '../components/figure/Figure';
+import LoopSlider from '../components/loopSlider/LoopSlider';
+import BigNum from '../components/bigNum/BigNum';
+import Map from '../components/map/Map';
 import Link from 'next/link';
 import Water from '@/public/icons/water.svg';
 import Tools from '@/public/icons/tools.svg';
@@ -13,10 +13,12 @@ import pentairPic from '@/public/logos/pentair/pentair1.png';
 import cpoPic from '@/public/logos/cpo/cpo2.png';
 import { Suspense } from 'react';
 import Loading from './loading';
+import { useTranslations } from 'next-intl';
 
 export const metadata = {};
 
 export default function Home() {
+  const t = useTranslations('Index');
   return (
     <>
       <main className='center-text container'>
@@ -27,7 +29,7 @@ export default function Home() {
         </p>
 
         <section id='services'>
-          <h1>SERVICES</h1>
+          <h1>{t('services.title')}</h1>
           <div className='row'>
             {services.map((service) => (
               <div key={service.id} className='col-md-6 col-xl-3'>
