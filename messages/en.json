@@ -1,0 +1,66 @@
+{
+  "Nav": {
+    "contact": "Contact",
+    "services": "Services",
+    "experience": "Experience",
+    "about": "About",
+    "language": "Español"
+  },
+  "Hero": {
+    "title": "",
+    "subtitle": "Experience you can trust"
+  },
+  "Index": {
+    "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget nulla ligula. Pellentesque at libero volutpat, accumsan tellus eu, hendrerit urna.",
+    "services": {
+      "title": "SERVICES",
+      "hayward": "Hayward Warranty Servicing",
+      "pentair": "Pentair Warranty Servicing",
+      "pool": "Pool Maintenance",
+      "equipment": "Equipment Installation and Maintenance"
+    },
+    "beforeAfter": "Drag to see before and after",
+    "experience": {
+      "title": "EXPERIENCE YOU CAN <mark>TRUST</mark>",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget nulla ligula. Pellentesque at libero volutpat, accumsan tellus eu, hendrerit urna.",
+      "years": "Years of experience",
+      "customers": "Satisfied customers",
+      "locations": "Serving customers all over the island",
+      "learnMore": "Learn More"
+    }
+  },
+  "Contact": {
+    "title": "Contact Us",
+    "description": "Our main contact channel is WhatsApp, but you can also reach us at:",
+    "form": {
+      "button": "Contact Form",
+      "header": "Send us a message",
+      "required": "All fields required",
+      "first": "First name",
+      "last": "Last name",
+      "email": "Email",
+      "phone": "Phone Number",
+      "message": {
+        "label": "Message",
+        "placeholder": "Hello! I am looking for Aquaman's pool services."
+      },
+      "submit": "Send",
+      "submitting": "Sending",
+      "success": {
+        "title": "Sent",
+        "description": "We will get in touch as soon as possible!"
+      },
+      "failure": {
+        "title": "Failed to send message",
+        "description": "Please try again later"
+      }
+    }
+  },
+  "WhatsApp": {
+    "label": "Chat on WhatsApp",
+    "text": "Hello%21%20I%20am%20looking%20for%20Aquaman%27s%20pool%20services."
+  },
+  "Footer": {
+    "webmaster": "Contact Webmaster"
+  }
+}

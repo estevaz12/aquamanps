@@ -1,8 +1,8 @@
 import Image from 'next/image';
-import BeforeAfterFig from './components/figure/Figure';
-import LoopSlider from './components/loopSlider/LoopSlider';
-import BigNum from './components/bigNum/BigNum';
-import Map from './components/map/Map';
+import BeforeAfterFig from '../components/figure/Figure';
+import LoopSlider from '../components/loopSlider/LoopSlider';
+import BigNum from '../components/bigNum/BigNum';
+import Map from '../components/map/Map';
 import Link from 'next/link';
 import Water from '@/public/icons/water.svg';
 import Tools from '@/public/icons/tools.svg';
@@ -13,24 +13,49 @@ import pentairPic from '@/public/logos/pentair/pentair1.png';
 import cpoPic from '@/public/logos/cpo/cpo2.png';
 import { Suspense } from 'react';
 import Loading from './loading';
+import { useTranslations } from 'next-intl';
 
 export const metadata = {};
 
 export default function Home() {
+  const t = useTranslations('Index');
+  const services = [
+    {
+      name: t('services.hayward'),
+      element: (
+        <Image
+          src={haywardServPic}
+          alt={t('services.hayward')}
+          loading='lazy'
+        />
+      ),
+    },
+    {
+      name: t('services.pentair'),
+      element: (
+        <Image src={pentairPic} alt={t('services.pentair')} loading='lazy' />
+      ),
+    },
+    {
+      name: t('services.pool'),
+      element: <Water color='#039be5' width={75} height={75} />,
+    },
+    {
+      name: t('services.equipment'),
+      element: <Tools color='#415462' width={75} height={75} />,
+    },
+  ];
+
   return (
     <>
       <main className='center-text container'>
-        <p id='description'>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget
-          nulla ligula. Pellentesque at libero volutpat, accumsan tellus eu,
-          hendrerit urna.
-        </p>
+        <p id='description'>{t('intro')}</p>
 
         <section id='services'>
-          <h1>SERVICES</h1>
+          <h1>{t('services.title')}</h1>
           <div className='row'>
-            {services.map((service) => (
-              <div key={service.id} className='col-md-6 col-xl-3'>
+            {services.map((service, i) => (
+              <div key={i} className='col-md-6 col-xl-3'>
                 <article>
                   {service.element}
                   <footer>{service.name}</footer>
@@ -42,14 +67,14 @@ export default function Home() {
 
         <section id='before-after'>
           <Suspense fallback={<Loading />}>
-            <BeforeAfterFig />
+            <BeforeAfterFig caption={t('beforeAfter')} />
           </Suspense>
         </section>
 
         <section id='experience'>
-          <h1>
-            EXPERIENCE YOU CAN <mark>TRUST</mark>
-          </h1>
+          <h1
+            dangerouslySetInnerHTML={{ __html: t.raw('experience.title') }}
+          ></h1>
 
           <LoopSlider>
             {carouselImgs.map((img, i) => (
@@ -63,65 +88,30 @@ export default function Home() {
             ))}
           </LoopSlider>
 
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget
-            nulla ligula. Pellentesque at libero volutpat, accumsan tellus eu,
-            hendrerit urna.
-          </p>
+          <p>{t('experience.description')}</p>
           <div className='row'>
             <div className='col-md-6'>
-              <BigNum num={20} interval={35} caption='Years of experience' />
+              <BigNum num={20} interval={30} caption={t('experience.years')} />
             </div>
             <div className='col-md-6'>
               <BigNum
                 num={250}
-                interval={3}
-                caption='Satisfied customers over the years'
+                interval={2}
+                caption={t('experience.customers')}
               />
             </div>
           </div>
 
           <Map />
-          <h5>Serving customers all over the island</h5>
+          <h5>{t('experience.locations')}</h5>
           <Link href='#' role='button'>
-            Learn More
+            {t('experience.learnMore')}
           </Link>
         </section>
       </main>
     </>
   );
 }
-
-const services = [
-  {
-    id: 0,
-    name: 'Hayward Warranty Servicing',
-    element: (
-      <Image
-        src={haywardServPic}
-        alt='Hayward Warranty Servicing'
-        loading='lazy'
-      />
-    ),
-  },
-  {
-    id: 1,
-    name: 'Pentair Warranty Servicing',
-    element: (
-      <Image src={pentairPic} alt='Pentair Warranty Servicing' loading='lazy' />
-    ),
-  },
-  {
-    id: 2,
-    name: 'Pool Maintenance',
-    element: <Water color='#039be5' width={75} height={75} />,
-  },
-  {
-    id: 3,
-    name: 'Equipment Installation and Maintenace',
-    element: <Tools color='#415462' width={75} height={75} />,
-  },
-];
 
 const carouselImgs = [
   {

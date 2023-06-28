@@ -6,10 +6,11 @@ import { useState } from 'react';
 import Check from '@/public/icons/send-check-fill.svg';
 import Failed from '@/public/icons/send-x-fill.svg';
 
-export default function Form() {
+export default function Form({ translations }) {
   // init = 0, success = 200, error = 500
   const [status, setStatus] = useState(0);
   const [submitting, setSubmitting] = useState(false);
+  const t = translations;
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -38,7 +39,7 @@ export default function Form() {
           toggleModal(e);
         }}
       >
-        Contact Form
+        {t.button}
       </button>
 
       <dialog id='contactForm' className={styles.contactForm}>
@@ -53,7 +54,7 @@ export default function Form() {
                 toggleModal(e);
               }}
             />
-            Send us a message
+            {t.header}
           </header>
 
           {(() => {
@@ -64,31 +65,31 @@ export default function Form() {
                     <div className='spacer'>
                       <small>
                         <em className='muted'>
-                          <span className='error'>*</span> All fields required
+                          <span className='error'>*</span> {t.required}
                         </em>
                       </small>
                     </div>
                     <form onSubmit={(e) => handleSubmit(e)}>
                       <div className='grid'>
                         <label htmlFor='firstname'>
-                          First name
+                          {t.first}
                           <input
                             type='text'
                             id='firstname'
                             name='firstname'
-                            placeholder='First name'
+                            placeholder={t.first}
                             disabled={submitting}
                             required
                           />
                         </label>
 
                         <label htmlFor='lastname'>
-                          Last name
+                          {t.last}
                           <input
                             type='text'
                             id='lastname'
                             name='lastname'
-                            placeholder='Last name'
+                            placeholder={t.last}
                             disabled={submitting}
                             required
                           />
@@ -96,18 +97,18 @@ export default function Form() {
                       </div>
 
                       <label htmlFor='email'>
-                        Email
+                        {t.email}
                         <input
                           type='email'
                           id='email'
                           name='email'
-                          placeholder='Email'
+                          placeholder={t.email}
                           disabled={submitting}
                           required
                         />
                       </label>
                       <label htmlFor='tel'>
-                        Phone Number
+                        {t.phone}
                         <input
                           type='tel'
                           id='tel'
@@ -119,11 +120,11 @@ export default function Form() {
                       </label>
 
                       <label htmlFor='message'>
-                        Message
+                        {t.message.label}
                         <textarea
                           id='message'
                           name='message'
-                          placeholder="Hello! I am looking for Aquaman's pool services."
+                          placeholder={t.message.placeholder}
                           rows={3}
                           disabled={submitting}
                           required
@@ -132,11 +133,11 @@ export default function Form() {
 
                       {!submitting ? (
                         <button className='contrast' type='submit'>
-                          Send
+                          {t.submit}
                         </button>
                       ) : (
                         <button className='contrast' aria-busy='true'>
-                          Sending...
+                          {t.submitting}...
                         </button>
                       )}
                     </form>
@@ -147,8 +148,8 @@ export default function Form() {
                 return (
                   <div className='center-text submitted'>
                     <Check width='5rem' height='5rem' />
-                    <h1>Sent</h1>
-                    We will get in touch as soon as possible!
+                    <h1>{t.success.title}</h1>
+                    {t.success.description}
                   </div>
                 );
 
@@ -156,8 +157,8 @@ export default function Form() {
                 return (
                   <div className='center-text submitted'>
                     <Failed width='5rem' height='5rem' />
-                    <h1>Failed to send message</h1>
-                    Please try again later
+                    <h1>{t.failure.title}</h1>
+                    {t.failure.description}
                   </div>
                 );
             }

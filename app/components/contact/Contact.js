@@ -3,24 +3,27 @@ import Form from './Form';
 import Phone from '@/public/icons/telephone-fill.svg';
 import Email from '@/public/icons/envelope-fill.svg';
 import WABtn from '@/public/wa-btn/WhatsAppButtonGreenLarge.svg';
+import WABtnES from '@/public/wa-btn/WhatsAppButtonGreenLargeES.svg';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 
-export default function Contact() {
+export default function Contact({ locale }) {
+  const t = useTranslations('Contact');
+  const whatsAppT = useTranslations('WhatsApp');
+
   return (
     <footer className={`center-text ${styles.contact}`}>
-      <h1 id='contact'>Contact Us</h1>
+      <h1 id='contact'>{t('title')}</h1>
       <Link
-        aria-label='Chat on WhatsApp'
-        href='https://wa.me/17876350366?text=Hello%21%20I%20am%20looking%20for%20Aquaman%27s%20pool%20services.'
+        aria-label={whatsAppT('label')}
+        href={`https://wa.me/17876350366?text=${whatsAppT('text')}`}
       >
-        <WABtn />
+        {locale === 'en' ? <WABtn /> : <WABtnES />}
       </Link>
       <br />
       <br />
       <div className='container'>
-        <p>
-          Our main contact channel is WhatsApp, but you can also reach us at:
-        </p>
+        <p>{t('description')}</p>
 
         <ul className={styles.contactAddrs}>
           <li>
@@ -36,7 +39,7 @@ export default function Contact() {
         </ul>
       </div>
       <br />
-      <Form />
+      <Form translations={t.raw('form')} />
     </footer>
   );
 }

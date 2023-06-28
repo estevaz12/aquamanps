@@ -30,15 +30,28 @@
   color: var(--primary-inverse);
 }
 
+.navbar summary {
+  border-color: var(--contrast-inverse);
+}
+
+.navbar summary:hover {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
 .navbar summary svg {
-  margin-top: 0.25rem;
+  margin: auto 0;
+}
+
+.navbar details[role='list'] summary {
+  padding: 0.1rem 0.25rem;
 }
 
 .navbar details[role='list'] summary::after {
-  display: none;
+  margin-left: 0.25rem;
 }
 
-.navbar details[role='list'] summary + ul {
+.navbar details[role='list'] ul {
   left: auto;
 }
 

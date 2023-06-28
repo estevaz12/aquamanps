@@ -3,10 +3,11 @@
 import styles from './Figure.module.css';
 import Image from 'next/image';
 import { useState } from 'react';
-import beforePic from '@/public/images/pool2.jpg';
+import dirty from '@/public/images/dirty-pool.jpg';
+import clean from '@/public/images/clean-pool.jpg';
 import { useWindowDimensions } from '@/app/lib/hooks';
 
-export default function BeforeAfterFig() {
+export default function BeforeAfterFig({ caption }) {
   const [sliderVal, setSliderVal] = useState(50);
   const { width, height } = useWindowDimensions();
   const breakpoint = width > 768 && height <= 1080;
@@ -19,13 +20,13 @@ export default function BeforeAfterFig() {
     <figure className={breakpoint ? styles.responsive : 'full-width'}>
       <div className={styles.imgContainer}>
         <Image
-          src={beforePic}
+          src={clean}
           alt='Pool'
           className={styles.after}
           priority={true}
         />
         <Image
-          src={beforePic}
+          src={dirty}
           alt='Pool'
           className={styles.before}
           style={{ width: `${sliderVal}%` }}
@@ -44,7 +45,7 @@ export default function BeforeAfterFig() {
 
       <figcaption>
         <small>
-          <i>Drag to see before and after</i>
+          <i>{caption}</i>
         </small>
       </figcaption>
     </figure>

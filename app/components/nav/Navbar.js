@@ -4,16 +4,23 @@ import styles from './Navbar.module.css';
 import Logo from '../logo/Logo';
 import Menu from '@/public/icons/list.svg';
 import Close from '@/public/icons/x-lg.svg';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Globe from '@/public/icons/globe2.svg';
 import { useWindowDimensions } from '@/app/lib/hooks';
 
-export default function Navbar() {
+export default function Navbar({ locale, nextLang, navItems }) {
   const [toggled, setToggled] = useState(false);
   const toggleClass = toggled ? styles.toggled : '';
   const { width } = useWindowDimensions();
   const breakpoint = width >= 1024;
+  const nextLocale = locale === 'en' ? 'es' : 'en';
+
+  useEffect(() => {
+    if (breakpoint) {
+      setToggled(false);
+    }
+  }, [breakpoint]);
 
   function handleClick(e) {
     e.preventDefault();
@@ -37,20 +44,24 @@ export default function Navbar() {
         </ul>
         <ul>
           {breakpoint &&
-            items.map((item) => (
+            navItems.map((item, i) => (
               <li key={item} className={styles.extendedNav}>
-                <Link href={`#${item.toLowerCase()}`}>{item}</Link>
+                <Link href={`#${navIds[i]}`}>{item}</Link>
               </li>
             ))}
           <li key='language'>
             {!toggled && (
               <details role='list'>
-                <summary aria-haspopup='listbox' role='link'>
+                <summary
+                  aria-haspopup='listbox'
+                  role='button'
+                  className='outline'
+                >
                   <Globe color='#fff' width='1rem' height='1rem' />
                 </summary>
                 <ul role='listbox'>
                   <li>
-                    <Link href='#'>Español</Link>
+                    <Link href={`/${nextLocale}`}>{nextLang}</Link>
                   </li>
                 </ul>
               </details>
@@ -74,19 +85,17 @@ export default function Navbar() {
         <aside className={`container center-text`}>
           <nav>
             <p>
-              <Link href='#'>ESPAÑOL</Link>
+              <Link href={`/${nextLocale}`}>{nextLang.toUpperCase()}</Link>
             </p>
             <ul>
-              {items.map((item) => (
+              {navItems.map((item, i) => (
                 <li
                   key={item}
                   onClick={() => {
                     setToggled(false);
                   }}
                 >
-                  <Link href={`#${item.toLowerCase()}`}>
-                    {item.toUpperCase()}
-                  </Link>
+                  <Link href={`#${navIds[i]}`}>{item.toUpperCase()}</Link>
                 </li>
               ))}
             </ul>
@@ -97,4 +106,4 @@ export default function Navbar() {
   );
 }
 
-const items = ['Contact', 'Services', 'Experience', 'About'];
+const navIds = ['contact', 'services', 'experience', 'about'];
