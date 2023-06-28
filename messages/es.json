@@ -57,6 +57,7 @@
     }
   },
   "WhatsApp": {
+    "label": "Hablar en WhatsApp",
     "text": "%C2%A1Hola%21%20Estoy%20buscando%20los%20servicios%20de%20Aquaman."
   },
   "Footer": {

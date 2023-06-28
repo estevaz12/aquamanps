@@ -52,7 +52,11 @@ export default function Navbar({ locale, nextLang, navItems }) {
           <li key='language'>
             {!toggled && (
               <details role='list'>
-                <summary aria-haspopup='listbox' role='link'>
+                <summary
+                  aria-haspopup='listbox'
+                  role='button'
+                  className='outline'
+                >
                   <Globe color='#fff' width='1rem' height='1rem' />
                 </summary>
                 <ul role='listbox'>

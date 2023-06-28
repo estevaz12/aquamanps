@@ -30,16 +30,29 @@
   color: var(--primary-inverse);
 }
 
+.navbar summary {
+  border-color: var(--contrast-inverse);
+}
+
+.navbar summary:hover {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
 .navbar summary svg {
   margin: auto 0;
 }
 
-.navbar details[role='list'] summary::after {
-  /* display: none; */
+.navbar details[role='list'] summary {
+  padding: 0.1rem 0.25rem;
 }
 
-.navbar details[role='list'] summary + ul {
-  /* left: auto; */
+.navbar details[role='list'] summary::after {
+  margin-left: 0.25rem;
+}
+
+.navbar details[role='list'] ul {
+  left: auto;
 }
 
 .navbar details [role='link']:focus {

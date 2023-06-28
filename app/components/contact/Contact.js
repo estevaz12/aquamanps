@@ -3,10 +3,11 @@ import Form from './Form';
 import Phone from '@/public/icons/telephone-fill.svg';
 import Email from '@/public/icons/envelope-fill.svg';
 import WABtn from '@/public/wa-btn/WhatsAppButtonGreenLarge.svg';
+import WABtnES from '@/public/wa-btn/WhatsAppButtonGreenLargeES.svg';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 
-export default function Contact() {
+export default function Contact({ locale }) {
   const t = useTranslations('Contact');
   const whatsAppT = useTranslations('WhatsApp');
 
@@ -14,10 +15,10 @@ export default function Contact() {
     <footer className={`center-text ${styles.contact}`}>
       <h1 id='contact'>{t('title')}</h1>
       <Link
-        aria-label='Chat on WhatsApp'
+        aria-label={whatsAppT('label')}
         href={`https://wa.me/17876350366?text=${whatsAppT('text')}`}
       >
-        <WABtn />
+        {locale === 'en' ? <WABtn /> : <WABtnES />}
       </Link>
       <br />
       <br />

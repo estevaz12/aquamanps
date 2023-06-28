@@ -46,7 +46,7 @@ export default function RootLayout({ children, params }) {
         {children}
 
         <Overlay />
-        <Contact />
+        <Contact locale={locale} />
         <Footer navItems={navItems} />
       </body>
     </html>
