@@ -9,6 +9,8 @@ import Footer from '../components/footer/Footer';
 import Overlay from '../components/overlay/Overlay';
 import { useLocale, useTranslations } from 'next-intl';
 import { notFound } from 'next/navigation';
+import { Suspense } from 'react';
+import Loading from './loading';
 
 // const inter = Inter({ subsets: ['latin'] });
 
@@ -36,18 +38,20 @@ export default function RootLayout({ children, params }) {
   return (
     <html lang={locale} data-theme='light'>
       <body /*className={inter.className}*/>
-        <Hero />
-        <Navbar
-          locale={locale}
-          nextLang={t('Nav.language')}
-          navItems={navItems}
-        />
+        <Suspense fallback={<Loading />}>
+          <Hero />
+          <Navbar
+            locale={locale}
+            nextLang={t('Nav.language')}
+            navItems={navItems}
+          />
 
-        {children}
+          {children}
 
-        <Overlay />
-        <Contact locale={locale} />
-        <Footer navItems={navItems} />
+          <Overlay />
+          <Contact locale={locale} />
+          <Footer navItems={navItems} />
+        </Suspense>
       </body>
     </html>
   );

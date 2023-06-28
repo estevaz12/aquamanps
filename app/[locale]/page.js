@@ -11,8 +11,6 @@ import haywardPic from '@/public/logos/hayward/hayward5.jpg';
 import haywardServPic from '@/public/logos/hayward/hayward2.jpg';
 import pentairPic from '@/public/logos/pentair/pentair1.png';
 import cpoPic from '@/public/logos/cpo/cpo2.png';
-import { Suspense } from 'react';
-import Loading from './loading';
 import { useTranslations } from 'next-intl';
 
 export const metadata = {};
@@ -66,9 +64,7 @@ export default function Home() {
         </section>
 
         <section id='before-after'>
-          <Suspense fallback={<Loading />}>
-            <BeforeAfterFig caption={t('beforeAfter')} />
-          </Suspense>
+          <BeforeAfterFig caption={t('beforeAfter')} />
         </section>
 
         <section id='experience'>

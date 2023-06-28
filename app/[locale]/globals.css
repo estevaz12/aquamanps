@@ -107,8 +107,16 @@ h1 > mark {
 }
 
 .loading {
-  margin-top: var(--block-spacing-vertical);
-  margin-bottom: var(--block-spacing-vertical);
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  padding: auto;
+  overflow: hidden;
+  background-color: #fff;
 }
 
 dialog article > header .close {
