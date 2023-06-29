@@ -1,5 +1,5 @@
 import { ImageResponse } from 'next/server';
-import Hero from '../components/hero/Hero';
+import Hero from './components/hero/Hero';
 
 // Route segment config
 export const runtime = 'edge';
