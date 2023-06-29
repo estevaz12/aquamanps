@@ -52,8 +52,6 @@ export default function BeforeAfterFig({ caption }) {
   );
 }
 
-// TODO: i18n routing
-// TODO: make it search engine optimized
 // TODO: open graph images and all
+// TODO: make it search engine optimized
 // TODO: about page
-// TODO: redisign with Tailwind

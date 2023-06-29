@@ -31,12 +31,7 @@
 }
 
 .navbar summary {
-  border-color: var(--contrast-inverse);
-}
-
-.navbar summary:hover {
-  background-color: var(--primary);
-  border-color: var(--primary);
+  border: none;
 }
 
 .navbar summary svg {
@@ -44,11 +39,34 @@
 }
 
 .navbar details[role='list'] summary {
-  padding: 0.1rem 0.25rem;
+  padding: 0 0.25rem;
 }
 
 .navbar details[role='list'] summary::after {
-  margin-left: 0.25rem;
+  display: none;
+}
+
+.navbar details[role='list'] summary::before {
+  display: block;
+  width: 1rem;
+  height: calc(1rem * var(--line-height, 1.5));
+  /* -webkit-margin-start: 0.5rem;
+    margin-inline-start: .5rem; */
+  margin-right: 0.25rem;
+  float: left;
+  transform: rotate(0);
+  background-image: var(--icon-chevron-button);
+  background-position: right center;
+  background-size: 1rem auto;
+  background-repeat: no-repeat;
+  content: '';
+  transition: transform 100ms linear;
+}
+
+.navbar details[role='list'][open] summary::before {
+  position: static;
+  transform: rotate(180deg);
+  transition: transform 100ms linear;
 }
 
 .navbar details[role='list'] ul {
@@ -87,6 +105,13 @@
 
 .extendedNav a:hover {
   background-color: var(--primary);
+}
+
+@media (min-width: 1024px) {
+  .navbar summary:hover {
+    background-color: var(--primary);
+    border-color: var(--primary);
+  }
 }
 
 @keyframes fadeInOut {

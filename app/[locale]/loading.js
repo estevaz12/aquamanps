@@ -1,4 +1,4 @@
 export default function Loading() {
   // You can add any UI inside Loading, including a Skeleton.
-  return <div aria-busy='true' className='loading full-width'></div>;
+  return <div aria-busy='true' className='loading'></div>;
 }
