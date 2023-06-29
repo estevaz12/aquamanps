@@ -1,5 +1,5 @@
 import { ImageResponse } from 'next/server';
-import Hero from './components/hero/Hero';
+import Hero from '../components/hero/Hero';
 
 // Route segment config
 export const runtime = 'edge';
@@ -8,7 +8,7 @@ export const runtime = 'edge';
 export const alt = 'Aquaman Pool Services';
 export const size = {
   width: 1200,
-  height: 630,
+  height: 600,
 };
 
 // Font
@@ -23,7 +23,20 @@ export default function Image() {
   return new ImageResponse(
     (
       // ImageResponse JSX element
-      <Hero />
+      <div
+        style={{
+          fontSize: 128,
+          background: 'white',
+          width: '100%',
+          height: '100%',
+          display: 'flex',
+          textAlign: 'center',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        Hello world!
+      </div>
     ),
     // ImageResponse options
     {
