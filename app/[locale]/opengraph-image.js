@@ -1,5 +1,4 @@
 import { ImageResponse } from 'next/server';
-import Hero from '../components/hero/Hero';
 
 // Route segment config
 export const runtime = 'edge';
@@ -8,7 +7,7 @@ export const runtime = 'edge';
 export const alt = 'Aquaman Pool Services';
 export const size = {
   width: 1200,
-  height: 600,
+  height: 630,
 };
 
 // Font
