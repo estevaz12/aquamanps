@@ -1,3 +1,4 @@
+import Logo from '@/app/components/logo/Logo';
 import { ImageResponse } from 'next/server';
 
 // Route segment config
@@ -18,23 +19,26 @@ export const size = {
 export const contentType = 'image/png';
 
 // Image generation
-export default function Image() {
+export async function GET() {
   return new ImageResponse(
     (
       // ImageResponse JSX element
       <div
         style={{
           fontSize: 128,
-          background: 'white',
+          fontFamily: 'system-ui',
+          background: '#1b2832',
           width: '100%',
           height: '100%',
           display: 'flex',
           textAlign: 'center',
           alignItems: 'center',
           justifyContent: 'center',
+          color: '#4fc4ff',
+          textDecoration: 'underline yellow solid',
         }}
       >
-        Hello world!
+        Aquaman
       </div>
     ),
     // ImageResponse options
