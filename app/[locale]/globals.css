@@ -50,7 +50,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: var(--grotesk);
+  font-family: var(--grotesk) !important;
 }
 
 section > h1,
