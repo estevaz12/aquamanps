@@ -1,4 +1,3 @@
-import Logo from '@/app/components/logo/Logo';
 import { ImageResponse } from 'next/server';
 
 // Route segment config
@@ -12,9 +11,9 @@ export const size = {
 };
 
 // Font
-// const interSemiBold = fetch(
-//   new URL('./Inter-SemiBold.ttf', import.meta.url)
-// ).then((res) => res.arrayBuffer())
+const grotesk = fetch(
+  new URL('./FamiljenGrotesk-Regular.ttf', import.meta.url)
+).then((res) => res.arrayBuffer());
 
 export const contentType = 'image/png';
 
@@ -26,8 +25,8 @@ export async function GET() {
       <div
         style={{
           fontSize: 128,
-          fontFamily: 'system-ui',
           background: '#1b2832',
+          background: 'linear-gradient(to bottom, #1b2832 30%, #0f1419 80%)',
           width: '100%',
           height: '100%',
           display: 'flex',
@@ -46,14 +45,14 @@ export async function GET() {
       // For convenience, we can re-use the exported opengraph-image
       // size config to also set the ImageResponse's width and height.
       ...size,
-      // fonts: [
-      //   {
-      //     name: 'Inter',
-      //     data: await interSemiBold,
-      //     style: 'normal',
-      //     weight: 400,
-      //   },
-      // ],
+      fonts: [
+        {
+          name: 'Familjen Grotesk',
+          data: await grotesk,
+          style: 'normal',
+          weight: 400,
+        },
+      ],
     }
   );
 }
