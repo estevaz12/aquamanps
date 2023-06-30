@@ -13,7 +13,7 @@
   "Index": {
     "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget nulla ligula. Pellentesque at libero volutpat, accumsan tellus eu, hendrerit urna.",
     "services": {
-      "title": "SERVICIOS",
+      "title": "Servicios",
       "hayward": "Servicio de garantía Hayward",
       "pentair": "Servicio de garantía Pentair",
       "pool": "Mantenimiento de piscinas",
@@ -21,7 +21,7 @@
     },
     "beforeAfter": "Arrastra para ver antes y después",
     "experience": {
-      "title": "EXPERIENCIA EN LA QUE PUEDES <mark>CONFIAR</mark>",
+      "title": "Experiencia en la que puedes <mark>confiar</mark>",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget nulla ligula. Pellentesque at libero volutpat, accumsan tellus eu, hendrerit urna.",
       "years": "Años de experiencia",
       "customers": "Clientes satisfechos",

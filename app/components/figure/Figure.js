@@ -52,6 +52,5 @@ export default function BeforeAfterFig({ caption }) {
   );
 }
 
-// TODO: open graph images and all
 // TODO: make it search engine optimized
 // TODO: about page

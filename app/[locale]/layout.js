@@ -1,7 +1,7 @@
 import '@picocss/pico';
 import '../lib/pico-bootstrap-grid.min.css';
 import './globals.css';
-// import { Inter } from 'next/font/google';
+import { Inter, Familjen_Grotesk } from 'next/font/google';
 import Navbar from '../components/nav/Navbar';
 import Hero from '../components/hero/Hero';
 import Contact from '../components/contact/Contact';
@@ -12,7 +12,8 @@ import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
 import Loading from './loading';
 
-// const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ['latin'] });
+const grotesk = Familjen_Grotesk({ subsets: ['latin'], variable: '--grotesk' });
 
 export const metadata = {
   title: 'Aquaman Pool Services',
@@ -51,8 +52,12 @@ export default function RootLayout({ children, params }) {
   ];
 
   return (
-    <html lang={locale} data-theme='light'>
-      <body /*className={inter.className}*/>
+    <html
+      lang={locale}
+      data-theme='light'
+      className={`${inter.className} ${grotesk.variable}`}
+    >
+      <body>
         <Suspense fallback={<Loading />}>
           <Hero />
           <Navbar
