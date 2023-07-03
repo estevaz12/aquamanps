@@ -46,6 +46,16 @@
   display: none;
 }
 
+.navbar details[role='list'] summary::before,
+.navbar details[role='list'][open] summary::before {
+  background-image: var(--icon-chevron-button);
+  background-position: right center;
+  background-size: 1rem auto;
+  background-repeat: no-repeat;
+  content: '';
+  transition: transform 100ms linear;
+}
+
 .navbar details[role='list'] summary::before {
   display: block;
   width: 1rem;
@@ -55,18 +65,11 @@
   margin-right: 0.25rem;
   float: left;
   transform: rotate(0);
-  background-image: var(--icon-chevron-button);
-  background-position: right center;
-  background-size: 1rem auto;
-  background-repeat: no-repeat;
-  content: '';
-  transition: transform 100ms linear;
 }
 
 .navbar details[role='list'][open] summary::before {
   position: static;
   transform: rotate(180deg);
-  transition: transform 100ms linear;
 }
 
 .navbar details[role='list'] ul {
