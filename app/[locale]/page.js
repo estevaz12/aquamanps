@@ -87,12 +87,12 @@ export default function Home() {
           <p>{t('experience.description')}</p>
           <div className='row'>
             <div className='col-md-6'>
-              <BigNum num={20} interval={30} caption={t('experience.years')} />
+              <BigNum num={20} interval={35} caption={t('experience.years')} />
             </div>
             <div className='col-md-6'>
               <BigNum
                 num={250}
-                interval={2}
+                interval={4}
                 caption={t('experience.customers')}
               />
             </div>
