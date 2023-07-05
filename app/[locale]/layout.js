@@ -57,6 +57,20 @@ export default function RootLayout({ children, params }) {
     t('Nav.about'),
   ];
 
+  const jsonLd = {
+    '@context': 'http://schema.org',
+    '@type': 'LocalBusiness',
+    name: 'Aquaman Pool Services',
+    telephone: '(787) 635-0366',
+    email: 'aquamanps@gmail.com',
+    address: {
+      '@type': 'PostalAddress',
+      addressRegion: 'Puerto Rico',
+      addressCountry: 'US',
+    },
+    url: 'https://aquamanps.vercel.app/',
+  };
+
   return (
     <html
       lang={locale}
@@ -64,6 +78,11 @@ export default function RootLayout({ children, params }) {
       className={`${inter.className} ${grotesk.variable}`}
     >
       <body>
+        <script
+          type='application/ld+json'
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+
         <Suspense fallback={<Loading />}>
           <Hero />
           <Navbar
