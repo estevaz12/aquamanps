@@ -1,5 +1,4 @@
 import styles from './Contact.module.css';
-import Form from './Form';
 import Phone from '@/public/icons/telephone-fill.svg';
 import Email from '@/public/icons/envelope-fill.svg';
 import WABtn from '@/public/wa-btn/WhatsAppButtonGreenLarge.svg';
@@ -7,6 +6,9 @@ import WABtnES from '@/public/wa-btn/WhatsAppButtonGreenLargeES.svg';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 
+const Form = dynamic(import('./Form'));
+
+import dynamic from 'next/dynamic';
 export default function Contact({ locale }) {
   const t = useTranslations('Contact');
   const whatsAppT = useTranslations('WhatsApp');

@@ -2,6 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
    <url>
       <loc>https://aquamanps.vercel.app/</loc>
-      <lastmod>2023-07-05</lastmod>
+      <lastmod>2023-07-06</lastmod>
+   </url>
+   <url>
+      <loc>https://aquamanps.vercel.app/es</loc>
+      <lastmod>2023-07-06</lastmod>
    </url>
 </urlset>

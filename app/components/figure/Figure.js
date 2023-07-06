@@ -22,15 +22,19 @@ export default function BeforeAfterFig({ caption }) {
         <Image
           src={clean}
           alt='Pool'
+          width={768}
+          height={768}
           className={styles.after}
-          priority={true}
+          loading='lazy'
         />
         <Image
           src={dirty}
           alt='Pool'
+          width={768}
+          height={768}
           className={styles.before}
           style={{ width: `${sliderVal}%` }}
-          priority={true}
+          loading='lazy'
         />
         <input
           type='range'
@@ -53,4 +57,6 @@ export default function BeforeAfterFig({ caption }) {
 }
 
 // TODO: make it search engine optimized
+// TODO: improve performance for mobile
+// TODO: accessibility
 // TODO: about page
