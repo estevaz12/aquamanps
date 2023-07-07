@@ -2,7 +2,6 @@ import Image from 'next/image';
 import BeforeAfterFig from '../components/figure/Figure';
 import LoopSlider from '../components/loopSlider/LoopSlider';
 import BigNum from '../components/bigNum/BigNum';
-import Map from '../components/map/Map';
 import Link from 'next/link';
 import Water from '@/public/icons/water.svg';
 import Tools from '@/public/icons/tools.svg';
@@ -12,8 +11,16 @@ import haywardServPic from '@/public/logos/hayward/hayward2.jpg';
 import pentairPic from '@/public/logos/pentair/pentair1.png';
 import cpoPic from '@/public/logos/cpo/cpo2.png';
 import { useTranslations } from 'next-intl';
+import dynamic from 'next/dynamic';
 
 export const metadata = {};
+
+const Map = dynamic(() => import('../components/map/Map'), {
+  ssr: false,
+  loading: () => (
+    <div aria-busy='true' className='full-width map-container'></div>
+  ),
+});
 
 export default function Home() {
   const t = useTranslations('Index');
@@ -24,6 +31,8 @@ export default function Home() {
         <Image
           src={haywardServPic}
           alt={t('services.hayward')}
+          width={200}
+          height={75}
           loading='lazy'
         />
       ),
@@ -31,7 +40,13 @@ export default function Home() {
     {
       name: t('services.pentair'),
       element: (
-        <Image src={pentairPic} alt={t('services.pentair')} loading='lazy' />
+        <Image
+          src={pentairPic}
+          alt={t('services.pentair')}
+          width={200}
+          height={75}
+          loading='lazy'
+        />
       ),
     },
     {

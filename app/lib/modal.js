@@ -13,7 +13,7 @@ const animationDuration = 400; // ms
 let visibleModal = null;
 
 // Toggle modal
-export function toggleModal(event) {
+export default function toggleModal(event) {
   event.preventDefault();
   const modal = document.getElementById('contactForm');
   typeof modal != 'undefined' && modal != null && isModalOpen(modal)

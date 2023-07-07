@@ -11,35 +11,36 @@ import { useLocale, useTranslations } from 'next-intl';
 import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
 import Loading from './loading';
+import { getTranslator } from 'next-intl/server';
 
 const inter = Inter({ subsets: ['latin'] });
 const grotesk = Familjen_Grotesk({ subsets: ['latin'], variable: '--grotesk' });
 
-export const metadata = {
-  metadataBase: new URL('https://aquamanps.vercel.app'),
-  alternates: {
-    canonical: '/',
-    languages: {
-      en: '/en',
-      es: '/es',
+export async function generateMetadata({ params: { locale } }) {
+  const t = await getTranslator(locale, 'Metadata');
+
+  return {
+    metadataBase: new URL('https://aquamanps.vercel.app'),
+    alternates: {
+      canonical: '/',
+      languages: {
+        en: '/en',
+        es: '/es',
+      },
     },
-  },
-  title:
-    'CPO Certified Pool and Equipment Maintenance in Puerto Rico | Aquaman Pool Services',
-  description:
-    'As Certified Pool Operators, Aquaman Pool Services provides quality pool and equipment maintenance in Puerto Rico. Official Hayward and Pentair warranty servicing. With 20+ years of experience and 250+ satisfied customers, trust us to keep your pool in top condition.',
-  openGraph: {
-    title:
-      'CPO Certified Pool and Equipment Maintenance in Puerto Rico | Aquaman Pool Services',
-    description:
-      'As Certified Pool Operators, Aquaman Pool Services provides quality pool and equipment maintenance in Puerto Rico. Official Hayward and Pentair warranty servicing. With 20+ years of experience and 250+ satisfied customers, trust us to keep your pool in top condition.',
-    url: 'https://aquamanps.vercel.app',
-    siteName: 'Aquaman Pool Services',
-    images: '/api/og',
-    type: 'website',
-  },
-  themeColor: '#121b21',
-};
+    title: t('title'),
+    description: t('description'),
+    openGraph: {
+      title: t('title'),
+      description: t('description'),
+      url: 'https://aquamanps.vercel.app',
+      siteName: 'Aquaman Pool Services',
+      images: '/api/og',
+      type: 'website',
+    },
+    themeColor: '#121b21',
+  };
+}
 
 export default function RootLayout({ children, params }) {
   const locale = useLocale();
