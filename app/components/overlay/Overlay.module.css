@@ -4,6 +4,7 @@
   bottom: var(--spacing);
   width: auto;
   margin-bottom: 0;
+  z-index: 999;
 }
 
 .overlay button {

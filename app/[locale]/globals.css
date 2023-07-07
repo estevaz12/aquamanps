@@ -126,6 +126,20 @@ h1 > mark {
   background-color: #fff;
 }
 
+.top-wave {
+  transform: rotate(180deg);
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.bottom-wave {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
 dialog article > header .close {
   width: 1.5rem;
   height: 1.5rem;

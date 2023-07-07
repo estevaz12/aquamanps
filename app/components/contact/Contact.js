@@ -5,6 +5,7 @@ import WABtn from '@/public/wa-btn/WhatsAppButtonGreenLarge.svg';
 import WABtnES from '@/public/wa-btn/WhatsAppButtonGreenLargeES.svg';
 import Link from 'next/link';
 import Form from './Form';
+import Wave from '@/public/wave.svg';
 import { useTranslations } from 'next-intl';
 
 export default function Contact({ locale }) {
@@ -13,6 +14,9 @@ export default function Contact({ locale }) {
 
   return (
     <footer className={`center-text ${styles.contact}`}>
+      <div className='top-wave'>
+        <Wave />
+      </div>
       <h1 id='contact'>{t('title')}</h1>
       <Link
         aria-label={whatsAppT('label')}

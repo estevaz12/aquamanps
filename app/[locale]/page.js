@@ -12,6 +12,7 @@ import pentairPic from '@/public/logos/pentair/pentair1.png';
 import cpoPic from '@/public/logos/cpo/cpo2.png';
 import { useTranslations } from 'next-intl';
 import dynamic from 'next/dynamic';
+import Wave from '@/public/wave.svg';
 
 export const metadata = {};
 
@@ -60,67 +61,65 @@ export default function Home() {
   ];
 
   return (
-    <>
-      <main className='center-text container'>
-        <p id='description'>{t('intro')}</p>
+    <main className='center-text container'>
+      <p id='description'>{t('intro')}</p>
 
-        <section id='services'>
-          <h1>{t('services.title')}</h1>
-          <div className='row'>
-            {services.map((service, i) => (
-              <div key={i} className='col-md-6 col-xl-3'>
-                <article>
-                  {service.element}
-                  <footer>{service.name}</footer>
-                </article>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section id='before-after'>
-          <BeforeAfterFig caption={t('beforeAfter')} />
-        </section>
-
-        <section id='experience'>
-          <h1
-            dangerouslySetInnerHTML={{ __html: t.raw('experience.title') }}
-          ></h1>
-
-          <LoopSlider>
-            {carouselImgs.map((img, i) => (
-              <Image
-                key={i}
-                src={img.src}
-                alt={img.name}
-                width={img.width}
-                height={img.height}
-              />
-            ))}
-          </LoopSlider>
-
-          <p>{t('experience.description')}</p>
-          <div className='row'>
-            <div className='col-md-6'>
-              <BigNum num={20} interval={35} caption={t('experience.years')} />
+      <section id='services'>
+        <h1>{t('services.title')}</h1>
+        <div className='row'>
+          {services.map((service, i) => (
+            <div key={i} className='col-md-6 col-xl-3'>
+              <article>
+                {service.element}
+                <footer>{service.name}</footer>
+              </article>
             </div>
-            <div className='col-md-6'>
-              <BigNum
-                num={250}
-                interval={4}
-                caption={t('experience.customers')}
-              />
-            </div>
-          </div>
+          ))}
+        </div>
+      </section>
 
-          <Map />
-          <h5>{t('experience.locations')}</h5>
-          <Link href='#' role='button'>
-            {t('experience.learnMore')}
-          </Link>
-        </section>
-      </main>
-    </>
+      <section id='before-after'>
+        <BeforeAfterFig caption={t('beforeAfter')} />
+      </section>
+
+      <section id='experience'>
+        <h1
+          dangerouslySetInnerHTML={{ __html: t.raw('experience.title') }}
+        ></h1>
+
+        <LoopSlider>
+          {carouselImgs.map((img, i) => (
+            <Image
+              key={i}
+              src={img.src}
+              alt={img.name}
+              width={img.width}
+              height={img.height}
+            />
+          ))}
+        </LoopSlider>
+
+        <p>{t('experience.description')}</p>
+        <div className='row'>
+          <div className='col-md-6'>
+            <BigNum num={20} interval={35} caption={t('experience.years')} />
+          </div>
+          <div className='col-md-6'>
+            <BigNum
+              num={250}
+              interval={4}
+              caption={t('experience.customers')}
+            />
+          </div>
+        </div>
+
+        <Map />
+        <h5>{t('experience.locations')}</h5>
+        <Link href='#' role='button'>
+          {t('experience.learnMore')}
+        </Link>
+      </section>
+    </main>
   );
 }
 
