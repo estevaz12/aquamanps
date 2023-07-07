@@ -15,8 +15,12 @@ import dynamic from 'next/dynamic';
 
 export const metadata = {};
 
-const Map = dynamic(() => import('../components/map/Map'), { ssr: false });
-// TODO: add loading state while map is loading
+const Map = dynamic(() => import('../components/map/Map'), {
+  ssr: false,
+  loading: () => (
+    <div aria-busy='true' className='full-width map-container'></div>
+  ),
+});
 
 export default function Home() {
   const t = useTranslations('Index');

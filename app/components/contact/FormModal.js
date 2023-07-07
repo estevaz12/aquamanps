@@ -4,8 +4,31 @@ import Link from 'next/link';
 import styles from './Contact.module.css';
 import Check from '@/public/icons/send-check-fill.svg';
 import Failed from '@/public/icons/send-x-fill.svg';
+import { useState } from 'react';
 
-export default function FormModal({ status, submitting, t, onSubmit }) {
+export default function FormModal({ t }) {
+  // init = 0, success = 200, error = 500
+  const [status, setStatus] = useState(0);
+  const [submitting, setSubmitting] = useState(false);
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    setSubmitting(true);
+
+    // get form data
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData);
+
+    // send data to API route
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
+
+    setStatus(response.status);
+  }
+
   return (
     <dialog id='contactForm' className={styles.contactForm}>
       <article>
@@ -34,7 +57,7 @@ export default function FormModal({ status, submitting, t, onSubmit }) {
                       </em>
                     </small>
                   </div>
-                  <form onSubmit={(e) => onSubmit(e)}>
+                  <form onSubmit={(e) => handleSubmit(e)}>
                     <div className='grid'>
                       <label htmlFor='firstname'>
                         {t.first}
