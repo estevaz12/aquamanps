@@ -32,21 +32,21 @@ export default function Navbar({ locale, nextLang, navItems }) {
       <nav className='container-fluid'>
         <ul>
           <li key='logo'>
-            <Link
-              href='/#top'
+            <a
+              href='#top'
               onClick={() => {
                 setToggled(false);
               }}
             >
               <Logo />
-            </Link>
+            </a>
           </li>
         </ul>
         <ul>
           {breakpoint &&
             navItems.map((item, i) => (
               <li key={item} className={styles.extendedNav}>
-                <Link href={`#${navIds[i]}`}>{item}</Link>
+                <a href={`#${navIds[i]}`}>{item}</a>
               </li>
             ))}
           <li key='language'>
@@ -95,7 +95,7 @@ export default function Navbar({ locale, nextLang, navItems }) {
                     setToggled(false);
                   }}
                 >
-                  <Link href={`#${navIds[i]}`}>{item.toUpperCase()}</Link>
+                  <a href={`#${navIds[i]}`}>{item.toUpperCase()}</a>
                 </li>
               ))}
             </ul>

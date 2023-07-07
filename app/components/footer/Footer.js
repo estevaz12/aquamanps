@@ -11,7 +11,7 @@ export default function Footer({ navItems }) {
         <ul>
           {navItems.map((item, i) => (
             <li key={item}>
-              <Link href={`#${navIds[i]}`}>{item.toUpperCase()}</Link>
+              <a href={`#${navIds[i]}`}>{item.toUpperCase()}</a>
             </li>
           ))}
         </ul>

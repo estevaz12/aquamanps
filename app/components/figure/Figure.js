@@ -56,7 +56,5 @@ export default function BeforeAfterFig({ caption }) {
   );
 }
 
-// TODO: make it search engine optimized
-// TODO: improve performance for mobile
 // TODO: accessibility
 // TODO: about page
