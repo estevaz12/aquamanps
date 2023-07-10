@@ -54,12 +54,12 @@ export default function Navbar({ locale, nextLang, navItems }) {
               <details role='list'>
                 <summary
                   aria-haspopup='listbox'
-                  role='button'
+                  role='listitem button'
                   className='outline'
                 >
                   <Globe color='#fff' width='1rem' height='1rem' />
                 </summary>
-                <ul role='listbox'>
+                <ul role='listitem listbox'>
                   <li role='option' aria-selected='false'>
                     <Link href={`/${nextLocale}`}>{nextLang}</Link>
                   </li>

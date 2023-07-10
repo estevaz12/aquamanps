@@ -24,10 +24,11 @@
 }
 
 .contactAddrs {
-  text-align: left;
+  /* text-align: left; */
   width: auto;
   margin: auto;
   display: inline-block;
+  padding: 0;
 }
 
 .contactAddrs li {
