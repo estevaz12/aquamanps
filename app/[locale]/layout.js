@@ -12,6 +12,7 @@ import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
 import Loading from './loading';
 import { getTranslator } from 'next-intl/server';
+import Script from 'next/script';
 
 const inter = Inter({ subsets: ['latin'] });
 const grotesk = Familjen_Grotesk({ subsets: ['latin'], variable: '--grotesk' });
@@ -79,6 +80,11 @@ export default function RootLayout({ children, params }) {
       className={`${inter.className} ${grotesk.variable}`}
     >
       <body>
+        {/* eslint-disable-next-line @next/next/no-before-interactive-script-outside-document */}
+        <Script
+          src='https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver'
+          strategy='beforeInteractive'
+        />
         <script
           type='application/ld+json'
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

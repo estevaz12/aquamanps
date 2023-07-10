@@ -129,7 +129,7 @@ h1 > mark {
 .top-wave {
   transform: rotate(180deg);
   position: relative;
-  top: 0;
+  top: -3px;
   left: 0;
 }
 
