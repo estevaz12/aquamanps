@@ -44,6 +44,7 @@ export default function BeforeAfterFig({ caption }) {
           onChange={handleChange}
           className={styles.slider}
           name='slider'
+          aria-label='Before after slider'
         />
       </div>
 
@@ -56,5 +57,12 @@ export default function BeforeAfterFig({ caption }) {
   );
 }
 
+// TODO: remove stuff
+// TODO: add Fajardo
 // TODO: accessibility
+// TODO: hosting
+// TODO: https / ssl
+// TODO: change logo
+// TODO: adjust colors
+// TODO: change before after images
 // TODO: about page

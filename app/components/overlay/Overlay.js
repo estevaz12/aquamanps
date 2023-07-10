@@ -14,8 +14,11 @@ export default function Overlay() {
           <UpArrow width='1.5rem' height='1.5rem' color='#fff' />
         </Link>
       </button> */}
-      <button className='whatsapp'>
-        <Link href={`https://wa.me/17876350366?text=${t('text')}`}>
+      <button className='whatsapp' aria-label='WhatsApp'>
+        <Link
+          href={`https://wa.me/17876350366?text=${t('text')}`}
+          aria-label='WhatsApp'
+        >
           <WhatsApp width='1.5rem' height='1.5rem' />
         </Link>
       </button>

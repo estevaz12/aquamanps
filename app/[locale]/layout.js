@@ -56,7 +56,7 @@ export default function RootLayout({ children, params }) {
     t('Nav.contact'),
     t('Nav.services'),
     t('Nav.experience'),
-    t('Nav.about'),
+    // t('Nav.about'),
   ];
 
   const jsonLd = {

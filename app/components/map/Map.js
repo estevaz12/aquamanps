@@ -62,8 +62,8 @@ function Delayed({ children, delay }) {
 
 const locations = [
   {
-    title: 'Humacao',
-    position: { lat: 18.1171769, lng: -65.7847269 },
+    title: 'Fajardo',
+    position: { lat: 18.3252148, lng: -65.6539356 },
   },
   {
     title: 'Río Grande',

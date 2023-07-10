@@ -35,15 +35,15 @@ export default function Contact({ locale }) {
             &emsp;
             <Link href='tel:+1(787)635-0366'>(787) 635-0366</Link>
           </li>
-          <li>
+          {/* <li>
             <Email />
             &emsp;
             <Link href='mailto:aquamanps@gmail.com'>aquamanps@gmail.com</Link>
-          </li>
+          </li> */}
         </ul>
       </div>
-      <br />
-      <Form translations={t.raw('form')} />
+      {/* <br />
+      <Form translations={t.raw('form')} /> */}
     </footer>
   );
 }

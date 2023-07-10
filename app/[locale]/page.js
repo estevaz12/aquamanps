@@ -102,11 +102,11 @@ export default function Home() {
         <p>{t('experience.description')}</p>
         <div className='row'>
           <div className='col-md-6'>
-            <BigNum num={20} interval={35} caption={t('experience.years')} />
+            <BigNum num={17} interval={35} caption={t('experience.years')} />
           </div>
           <div className='col-md-6'>
             <BigNum
-              num={250}
+              num={200}
               interval={4}
               caption={t('experience.customers')}
             />
@@ -115,9 +115,9 @@ export default function Home() {
 
         <Map />
         <h5>{t('experience.locations')}</h5>
-        <Link href='#' role='button'>
+        {/* <Link href='#' role='button'>
           {t('experience.learnMore')}
-        </Link>
+        </Link> */}
       </section>
     </main>
   );

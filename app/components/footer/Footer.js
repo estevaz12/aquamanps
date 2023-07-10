@@ -31,4 +31,4 @@ export default function Footer({ navItems }) {
   );
 }
 
-const navIds = ['contact', 'services', 'experience', 'about'];
+const navIds = ['contact', 'services', 'experience', /*'about'*/];

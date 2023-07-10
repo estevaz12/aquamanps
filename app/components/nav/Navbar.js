@@ -60,7 +60,7 @@ export default function Navbar({ locale, nextLang, navItems }) {
                   <Globe color='#fff' width='1rem' height='1rem' />
                 </summary>
                 <ul role='listbox'>
-                  <li>
+                  <li role='option' aria-selected='false'>
                     <Link href={`/${nextLocale}`}>{nextLang}</Link>
                   </li>
                 </ul>
@@ -69,13 +69,15 @@ export default function Navbar({ locale, nextLang, navItems }) {
           </li>
           {!breakpoint && (
             <li key='menu' onClick={handleClick}>
-              <a href='#'>
-                {toggled ? (
+              {toggled ? (
+                <a href='#' aria-label='Close'>
                   <Close width='1.25rem' height='1.25rem' />
-                ) : (
+                </a>
+              ) : (
+                <a href='#' aria-label='Menu'>
                   <Menu width='1.25rem' height='1.25rem' />
-                )}
-              </a>
+                </a>
+              )}
             </li>
           )}
         </ul>
@@ -106,4 +108,4 @@ export default function Navbar({ locale, nextLang, navItems }) {
   );
 }
 
-const navIds = ['contact', 'services', 'experience', 'about'];
+const navIds = ['contact', 'services', 'experience' /*'about'*/];

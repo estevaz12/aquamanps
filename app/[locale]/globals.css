@@ -53,6 +53,14 @@ h4 {
   font-family: var(--grotesk) !important;
 }
 
+h5 {
+  font-family: unset;
+}
+
+figure figcaption {
+  color: var(--color);
+}
+
 section > h1,
 footer > h1#contact {
   padding-top: calc(var(--font-size) * 2);
