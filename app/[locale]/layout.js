@@ -108,3 +108,11 @@ export default function RootLayout({ children, params }) {
     </html>
   );
 }
+
+// TODO: accessibility
+// TODO: hosting
+// TODO: https / ssl
+// TODO: change logo
+// TODO: adjust colors
+// TODO: change before after images
+// TODO: about page
