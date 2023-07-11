@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import styles from './Hero.module.css';
 import Logo from '../logo/Logo';
-import heroPic from '@/public/images/pool1.jpg';
 import { useTranslations } from 'next-intl';
 
 export default function Hero() {
@@ -10,7 +9,7 @@ export default function Hero() {
     <>
       <div id='#top' className={`full-width ${styles.hero}`}>
         <Image
-          src={heroPic}
+          src='/images/pool1.jpg'
           alt='Pool'
           fill={true}
           className={styles.heroImage}

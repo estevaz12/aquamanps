@@ -109,7 +109,6 @@ export default function RootLayout({ children, params }) {
   );
 }
 
-// TODO: accessibility
 // TODO: hosting
 // TODO: https / ssl
 // TODO: change logo

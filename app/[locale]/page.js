@@ -2,17 +2,11 @@ import Image from 'next/image';
 import BeforeAfterFig from '../components/figure/Figure';
 import LoopSlider from '../components/loopSlider/LoopSlider';
 import BigNum from '../components/bigNum/BigNum';
-import Link from 'next/link';
 import Water from '@/public/icons/water.svg';
 import Tools from '@/public/icons/tools.svg';
 import './styles.css';
-import haywardPic from '@/public/logos/hayward/hayward5.jpg';
-import haywardServPic from '@/public/logos/hayward/hayward2.jpg';
-import pentairPic from '@/public/logos/pentair/pentair1.png';
-import cpoPic from '@/public/logos/cpo/cpo2.png';
 import { useTranslations } from 'next-intl';
 import dynamic from 'next/dynamic';
-import Wave from '@/public/wave.svg';
 
 export const metadata = {};
 
@@ -30,7 +24,7 @@ export default function Home() {
       name: t('services.hayward'),
       element: (
         <Image
-          src={haywardServPic}
+          src='/logos/hayward/hayward2.jpg'
           alt={t('services.hayward')}
           width={200}
           height={75}
@@ -42,7 +36,7 @@ export default function Home() {
       name: t('services.pentair'),
       element: (
         <Image
-          src={pentairPic}
+          src='/logos/pentair/pentair1.png'
           alt={t('services.pentair')}
           width={200}
           height={75}
@@ -125,19 +119,19 @@ export default function Home() {
 
 const carouselImgs = [
   {
-    src: haywardPic,
+    src: '/logos/hayward/hayward5.jpg',
     name: 'Hayward Logo',
     width: 200,
     height: 32,
   },
   {
-    src: cpoPic,
+    src: '/logos/cpo/cpo2.png',
     name: 'CPO Logo',
     width: 100,
     height: 100,
   },
   {
-    src: pentairPic,
+    src: '/logos/pentair/pentair1.png',
     name: 'Pentair Logo',
     width: 200,
     height: 75,

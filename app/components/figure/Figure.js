@@ -3,8 +3,6 @@
 import styles from './Figure.module.css';
 import Image from 'next/image';
 import { useState } from 'react';
-import dirty from '@/public/images/dirty-pool.jpg';
-import clean from '@/public/images/clean-pool.jpg';
 import { useWindowDimensions } from '@/app/lib/hooks';
 
 export default function BeforeAfterFig({ caption }) {
@@ -20,7 +18,7 @@ export default function BeforeAfterFig({ caption }) {
     <figure className={breakpoint ? styles.responsive : 'full-width'}>
       <div className={styles.imgContainer}>
         <Image
-          src={clean}
+          src='/images/clean-pool.jpg'
           alt='Pool'
           width={768}
           height={768}
@@ -28,7 +26,7 @@ export default function BeforeAfterFig({ caption }) {
           loading='lazy'
         />
         <Image
-          src={dirty}
+          src='/images/dirty-pool.jpg'
           alt='Pool'
           width={768}
           height={768}
