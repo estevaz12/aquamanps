@@ -13,6 +13,8 @@ import { Suspense } from 'react';
 import Loading from './loading';
 import { getTranslator } from 'next-intl/server';
 import Script from 'next/script';
+import GoogleAnalytics from '../components/googleAnalytics/GoogleAnalytics';
+import TrackPageViews from '../components/googleAnalytics/TrackPageViews';
 
 const inter = Inter({ subsets: ['latin'] });
 const grotesk = Familjen_Grotesk({ subsets: ['latin'], variable: '--grotesk' });
@@ -80,6 +82,11 @@ export default function RootLayout({ children, params }) {
       className={`${inter.className} ${grotesk.variable}`}
     >
       <body>
+        <GoogleAnalytics
+          GA_TRACKING_ID={process.env.NEXT_PUBLIC_GA_TRACKING_ID}
+        />
+        <TrackPageViews GA_TRACKING_ID={process.env.GA_TRACKING_ID} />
+
         {/* eslint-disable-next-line @next/next/no-before-interactive-script-outside-document */}
         <Script
           src='https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver'
@@ -111,6 +118,8 @@ export default function RootLayout({ children, params }) {
 
 // TODO: hosting
 // TODO: https / ssl
+// TODO: change urls to custom domain
+// TODO: analytics
 // TODO: change logo
 // TODO: adjust colors
 // TODO: change before after images
