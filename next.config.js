@@ -27,6 +27,9 @@ const nextConfig = {
     return config;
   },
   reactStrictMode: true,
+  experimental: {
+    appDir: true,
+  },
 };
 
 const withNextIntl = require('next-intl/plugin')('./i18n.ts');

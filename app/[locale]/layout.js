@@ -85,7 +85,9 @@ export default function RootLayout({ children, params }) {
         <GoogleAnalytics
           GA_TRACKING_ID={process.env.NEXT_PUBLIC_GA_TRACKING_ID}
         />
-        <TrackPageViews GA_TRACKING_ID={process.env.GA_TRACKING_ID} />
+        <TrackPageViews
+          GA_TRACKING_ID={process.env.NEXT_PUBLIC_GA_TRACKING_ID}
+        />
 
         {/* eslint-disable-next-line @next/next/no-before-interactive-script-outside-document */}
         <Script
