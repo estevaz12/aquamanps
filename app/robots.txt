@@ -1,4 +1,4 @@
 User-Agent: *
 Allow: /
 Disallow: /api/contact
-Sitemap: https://aquamanps.vercel.app/sitemap.xml
+Sitemap: https://aquamanps.com/sitemap.xml

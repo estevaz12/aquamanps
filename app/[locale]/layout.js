@@ -23,7 +23,7 @@ export async function generateMetadata({ params: { locale } }) {
   const t = await getTranslator(locale, 'Metadata');
 
   return {
-    metadataBase: new URL('https://aquamanps.vercel.app'),
+    metadataBase: new URL('https://aquamanps.com'),
     alternates: {
       canonical: '/',
       languages: {
@@ -36,7 +36,7 @@ export async function generateMetadata({ params: { locale } }) {
     openGraph: {
       title: t('title'),
       description: t('description'),
-      url: 'https://aquamanps.vercel.app',
+      url: 'https://aquamanps.com',
       siteName: 'Aquaman Pool Services',
       images: '/api/og',
       type: 'website',
@@ -72,7 +72,7 @@ export default function RootLayout({ children, params }) {
       addressRegion: 'Puerto Rico',
       addressCountry: 'US',
     },
-    url: 'https://aquamanps.vercel.app/',
+    url: 'https://aquamanps.com/',
   };
 
   return (
